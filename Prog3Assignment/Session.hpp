@@ -10,7 +10,7 @@ class Session
 {
 public:
     void add(Component* component);
-    void remove(Component* component):
+    void remove(Component* component);
     void run();
     
 private:

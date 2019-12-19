@@ -13,6 +13,7 @@
 		703ED6A523ABAD38007C7001 /* libSDL2_image-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 703ED6A423ABAD38007C7001 /* libSDL2_image-2.0.0.dylib */; settings = {ATTRIBUTES = (Required, ); }; };
 		703ED6AA23ABB631007C7001 /* System.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 703ED6A823ABB631007C7001 /* System.cpp */; };
 		703ED6AD23ABB9DB007C7001 /* Session.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 703ED6AB23ABB9DB007C7001 /* Session.cpp */; };
+		703ED6B023ABC0C2007C7001 /* Component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 703ED6AE23ABC0C2007C7001 /* Component.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,6 +39,8 @@
 		703ED6A923ABB631007C7001 /* System.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = System.hpp; sourceTree = "<group>"; };
 		703ED6AB23ABB9DB007C7001 /* Session.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Session.cpp; sourceTree = "<group>"; };
 		703ED6AC23ABB9DB007C7001 /* Session.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Session.hpp; sourceTree = "<group>"; };
+		703ED6AE23ABC0C2007C7001 /* Component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Component.cpp; sourceTree = "<group>"; };
+		703ED6AF23ABC0C2007C7001 /* Component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Component.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +83,8 @@
 				703ED6A923ABB631007C7001 /* System.hpp */,
 				703ED6AB23ABB9DB007C7001 /* Session.cpp */,
 				703ED6AC23ABB9DB007C7001 /* Session.hpp */,
+				703ED6AE23ABC0C2007C7001 /* Component.cpp */,
+				703ED6AF23ABC0C2007C7001 /* Component.hpp */,
 			);
 			path = Prog3Assignment;
 			sourceTree = "<group>";
@@ -152,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				703ED6AA23ABB631007C7001 /* System.cpp in Sources */,
+				703ED6B023ABC0C2007C7001 /* Component.cpp in Sources */,
 				703ED6AD23ABB9DB007C7001 /* Session.cpp in Sources */,
 				703ED69623ABA904007C7001 /* main.cpp in Sources */,
 			);

@@ -1,6 +1,7 @@
 
 #include "Session.hpp"
-#include "Component.h"
+#include "Component.hpp"
+#include "System.hpp"
 #include <SDL2/SDL.h>
 
 #define FPS 60
@@ -49,7 +50,7 @@ void Session::run(){
         added.clear();
         
         for (Component* component : removed){
-            for (vector<Component*>::iterator i = components.begin(); i !=components.end()){
+            for (std::vector<Component*>::iterator i = components.begin(); i !=components.end();){
                 if (*i == component) {
                     i = components.erase(i);
                 }
