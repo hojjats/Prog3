@@ -11,6 +11,7 @@
 		703ED69E23ABACFD007C7001 /* libSDL2-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 703ED69D23ABACFD007C7001 /* libSDL2-2.0.0.dylib */; };
 		703ED6A223ABAD20007C7001 /* libSDL2_ttf-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 703ED6A123ABAD20007C7001 /* libSDL2_ttf-2.0.0.dylib */; };
 		703ED6A523ABAD38007C7001 /* libSDL2_image-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 703ED6A423ABAD38007C7001 /* libSDL2_image-2.0.0.dylib */; settings = {ATTRIBUTES = (Required, ); }; };
+		703ED6AA23ABB631007C7001 /* System.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 703ED6A823ABB631007C7001 /* System.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,6 +33,8 @@
 		703ED6A123ABAD20007C7001 /* libSDL2_ttf-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL2_ttf-2.0.0.dylib"; path = "../../../../../usr/local/Cellar/sdl2_ttf/2.0.15/lib/libSDL2_ttf-2.0.0.dylib"; sourceTree = "<group>"; };
 		703ED6A423ABAD38007C7001 /* libSDL2_image-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL2_image-2.0.0.dylib"; path = "../../../../../usr/local/Cellar/sdl2_image/2.0.5/lib/libSDL2_image-2.0.0.dylib"; sourceTree = "<group>"; };
 		703ED6A723ABB078007C7001 /* Prog3Assignment.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Prog3Assignment.entitlements; sourceTree = "<group>"; };
+		703ED6A823ABB631007C7001 /* System.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = System.cpp; sourceTree = "<group>"; };
+		703ED6A923ABB631007C7001 /* System.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = System.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +73,8 @@
 			children = (
 				703ED6A723ABB078007C7001 /* Prog3Assignment.entitlements */,
 				703ED69523ABA904007C7001 /* main.cpp */,
+				703ED6A823ABB631007C7001 /* System.cpp */,
+				703ED6A923ABB631007C7001 /* System.hpp */,
 			);
 			path = Prog3Assignment;
 			sourceTree = "<group>";
@@ -141,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				703ED6AA23ABB631007C7001 /* System.cpp in Sources */,
 				703ED69623ABA904007C7001 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
