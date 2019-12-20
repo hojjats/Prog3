@@ -6,12 +6,12 @@
 
 #define FPS 60
 
-void Session::add(Component* component) {
-    added.push_back(component);
+void Session::add(Sprite* sprite) {
+    added.push_back(sprite);
 }
 
-void Session::remove(Component* component) {
-    removed.push_back(component);
+void Session::remove(Sprite* sprite) {
+    removed.push_back(sprite);
 }
 
 void Session::run(){
@@ -28,31 +28,31 @@ void Session::run(){
                     exit = true;
                     break;
                 case SDL_MOUSEBUTTONDOWN:
-                    for (Component* component: components) {
-                        component->mouseDown(event.button.x, event.button.y);
+                    for (Sprite* sprite : sprites) {
+                        sprite->mouseDown(event.button.x, event.button.y);
                     }
                     break;
                 case SDL_MOUSEBUTTONUP:
-                    for (Component* component: components) {
-                        component->mouseUp(event.button.x, event.button.y);
+                    for (Sprite* sprite : sprites) {
+                        sprite->mouseUp(event.button.x, event.button.y);
                     }
                     break;
             }
         }
         
-        for (Component* component : components) {
-            component->tick();
+        for (Sprite* sprite : sprites) {
+            sprite->tick();
         }
         
-        for (Component* component : added) {
-            components.push_back(component);
+        for (Sprite* sprite : added) {
+            sprites.push_back(sprite);
         }
         added.clear();
         
-        for (Component* component : removed){
-            for (std::vector<Component*>::iterator i = components.begin(); i !=components.end();){
-                if (*i == component) {
-                    i = components.erase(i);
+        for (Sprite* sprite : removed){
+            for (std::vector<Sprite*>::iterator i = sprites.begin(); i != sprites.end();){
+                if (*i == sprite) {
+                    i = sprites.erase(i);
                 }
                 else
                     i++;
@@ -62,8 +62,8 @@ void Session::run(){
         
         SDL_SetRenderDrawColor(sys.ren, 255, 255, 255, 255);
         SDL_RenderClear(sys.ren);
-        for (Component* component : components){
-            component->draw();
+        for (Sprite* sprite: sprites){
+            sprite->draw();
         }
         SDL_RenderPresent(sys.ren);
         

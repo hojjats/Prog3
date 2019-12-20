@@ -4,18 +4,18 @@
 #define Session_hpp
 
 #include <vector>
-#include "Component.hpp"
+#include "Sprite.hpp"
 
 class Session
 {
 public:
-    void add(Component* component);
-    void remove(Component* component);
+    void add(Sprite* sprite);
+    void remove(Sprite* sprite);
     void run();
     
 private:
-    std::vector<Component*> components;
-    std::vector<Component*> added, removed;
+    std::vector<Sprite*> sprites;
+    std::vector<Sprite*> added, removed;
     
     
 };
