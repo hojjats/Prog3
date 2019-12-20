@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		702FDECD23AD0635002E2AF0 /* Sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 702FDECB23AD0635002E2AF0 /* Sprite.cpp */; };
+		702FDED023AD0FC6002E2AF0 /* Bird.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 702FDECE23AD0FC6002E2AF0 /* Bird.cpp */; };
 		703ED69623ABA904007C7001 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 703ED69523ABA904007C7001 /* main.cpp */; };
 		703ED69E23ABACFD007C7001 /* libSDL2-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 703ED69D23ABACFD007C7001 /* libSDL2-2.0.0.dylib */; };
 		703ED6A223ABAD20007C7001 /* libSDL2_ttf-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 703ED6A123ABAD20007C7001 /* libSDL2_ttf-2.0.0.dylib */; };
@@ -33,6 +34,8 @@
 		6A2C9F0623AD0FE700607C79 /* bird.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bird.png; sourceTree = "<group>"; };
 		702FDECB23AD0635002E2AF0 /* Sprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sprite.cpp; sourceTree = "<group>"; };
 		702FDECC23AD0635002E2AF0 /* Sprite.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Sprite.hpp; sourceTree = "<group>"; };
+		702FDECE23AD0FC6002E2AF0 /* Bird.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Bird.cpp; sourceTree = "<group>"; };
+		702FDECF23AD0FC6002E2AF0 /* Bird.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Bird.hpp; sourceTree = "<group>"; };
 		703ED69223ABA904007C7001 /* Prog3Assignment */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Prog3Assignment; sourceTree = BUILT_PRODUCTS_DIR; };
 		703ED69523ABA904007C7001 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		703ED69D23ABACFD007C7001 /* libSDL2-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL2-2.0.0.dylib"; path = "../../../../../usr/local/Cellar/sdl2/2.0.10/lib/libSDL2-2.0.0.dylib"; sourceTree = "<group>"; };
@@ -92,6 +95,8 @@
 				703ED6AC23ABB9DB007C7001 /* Session.hpp */,
 				703ED6AE23ABC0C2007C7001 /* Component.cpp */,
 				703ED6AF23ABC0C2007C7001 /* Component.hpp */,
+				702FDECE23AD0FC6002E2AF0 /* Bird.cpp */,
+				702FDECF23AD0FC6002E2AF0 /* Bird.hpp */,
 			);
 			path = Prog3Assignment;
 			sourceTree = "<group>";
@@ -163,6 +168,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				702FDED023AD0FC6002E2AF0 /* Bird.cpp in Sources */,
 				703ED6AA23ABB631007C7001 /* System.cpp in Sources */,
 				703ED6B023ABC0C2007C7001 /* Component.cpp in Sources */,
 				702FDECD23AD0635002E2AF0 /* Sprite.cpp in Sources */,
