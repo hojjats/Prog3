@@ -44,7 +44,7 @@ void Session::run(){
             component->tick();
         }
         
-        for (Component* component : components) {
+        for (Component* component : added) {
             components.push_back(component);
         }
         added.clear();

@@ -5,11 +5,11 @@ System::System() {
     ren = SDL_CreateRenderer(win, -1, 0);
 }
 
-/*System::~System() {
+System::~System() {
     SDL_DestroyWindow(win);
     SDL_DestroyRenderer(ren);
     SDL_Quit();
-}*/
+}
 
 System sys;
 
