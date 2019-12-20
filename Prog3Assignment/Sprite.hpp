@@ -8,7 +8,7 @@ public:
     virtual void draw() const = 0;
     SDL_Rect getRect() const { return rect; }
     virtual void tick() = 0;
-    virtual ~Sprite();
+    virtual ~Sprite(){}
     virtual void handleEvent(SDL_Event event) = 0;
     
 protected:

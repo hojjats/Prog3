@@ -1,6 +1,4 @@
-
 #include "Session.hpp"
-#include "Component.hpp"
 #include "System.hpp"
 #include <SDL2/SDL.h>
 
