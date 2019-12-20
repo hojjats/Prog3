@@ -1,6 +1,5 @@
 #include "Sprite.hpp"
-#include <stdio.h>
-#include <SDL2/SDL.h>
+
 
 
 class Sprite{
