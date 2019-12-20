@@ -1,7 +1,6 @@
 #ifndef SPRITE_HPP
 #define SPRITE_HPP
 
-#include <stdio.h>
 #include <SDL2/SDL.h>
 
 class Sprite{

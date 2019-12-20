@@ -4,15 +4,16 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 #include "System.hpp"
+#include "Sprite.hpp"
 
 Session ses;
 
-class Bullet : public Component {
+class Bullet : public Sprite {
 public:
     static Bullet* getInstance(int x) {
         return new Bullet(x);
     }
-    Bullet(int x) : Component(x, 500, 40,40){
+    Bullet(int x) : Sprite(x, 500, 40,40){
         // add filePath
         texture = IMG_LoadTexture(sys.ren, "filePath");
     }
@@ -35,9 +36,9 @@ private:
     int counter = 0;
 };
 
-class Pistol : public Component {
+class Pistol : public Sprite {
 public:
-    Pistol() :Component(0, 0, 0, 0) {}
+    Pistol() :Sprite(0, 0, 0, 0) {}
     void draw() const {}
     void tick() {}
     void mouseDown(int x, int y) {
