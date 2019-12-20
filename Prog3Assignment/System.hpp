@@ -5,7 +5,7 @@
 struct System
 {
     System();
-    //~System();
+    ~System();
     
     SDL_Window* win;
     SDL_Renderer* ren;

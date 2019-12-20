@@ -13,14 +13,15 @@ public:
         return new Bullet(x);
     }
     Bullet(int x) : Component(x, 500, 40,40){
-        //texture = IMG_LoadTexture(sys.ren, filePath);
+        // add filePath
+        texture = IMG_LoadTexture(sys.ren, "filePath");
     }
     ~Bullet() {
         SDL_DestroyTexture(texture);
     }
     void draw() const {
-        //Needs fix
-        //SDL_RenderCopy(sys.ren, texture, NULL, &getRect());
+        SDL_Rect rect = getRect();
+        SDL_RenderCopy(sys.ren, texture, NULL, &rect);
     }
     void tick() {
         counter++;
