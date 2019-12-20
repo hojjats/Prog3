@@ -5,6 +5,7 @@
 #include <SDL2/SDL_image.h>
 #include "System.hpp"
 #include "Sprite.hpp"
+#include "Bird.hpp"
 
 Session ses;
 
@@ -50,7 +51,7 @@ public:
         }
     }
     void mouseDown(int x, int y) {
-        Bullet* b = Bullet::getInstance(x);
+        Bird* b = Bird::getInstance(x);
         ses.add(b);
     }
 };
