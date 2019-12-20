@@ -20,11 +20,12 @@ public:
     ~Bullet() {
         SDL_DestroyTexture(texture);
     }
-    void draw() const {
+    void handleEvent(SDL_Event event) override{}
+    void draw() const override {
         SDL_Rect rect = getRect();
         SDL_RenderCopy(sys.ren, texture, NULL, &rect);
     }
-    void tick() {
+    void tick() override {
         counter++;
         if (rect.y <= 0)
             ses.remove(this);
@@ -39,8 +40,15 @@ private:
 class Pistol : public Sprite {
 public:
     Pistol() :Sprite(0, 0, 0, 0) {}
-    void draw() const {}
-    void tick() {}
+    void draw() const override {}
+    void tick() override {}
+    void handleEvent(SDL_Event event) override {
+        switch (event.type) {
+            case SDL_MOUSEBUTTONDOWN:
+                mouseDown(event.button.x, event.button.y);
+                break;
+        }
+    }
     void mouseDown(int x, int y) {
         Bullet* b = Bullet::getInstance(x);
         ses.add(b);

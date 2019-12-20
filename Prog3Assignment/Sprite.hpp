@@ -9,6 +9,8 @@ public:
     SDL_Rect getRect() const { return rect; }
     virtual void tick() = 0;
     virtual ~Sprite();
+    virtual void handleEvent(SDL_Event event) = 0;
+    
 protected:
     Sprite(int x, int y, int w, int h) : rect{ x,y,w,h } {}
     SDL_Rect rect;

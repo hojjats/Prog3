@@ -23,20 +23,11 @@ void Session::run(){
         SDL_Event event;
         Uint32 nextTick = SDL_GetTicks() + tickInterval;
         while (SDL_PollEvent(&event)) {
-            switch (event.type) {
-                case SDL_QUIT:
-                    exit = true;
-                    break;
-                case SDL_MOUSEBUTTONDOWN:
-                    for (Sprite* sprite : sprites) {
-                        sprite->mouseDown(event.button.x, event.button.y);
-                    }
-                    break;
-                case SDL_MOUSEBUTTONUP:
-                    for (Sprite* sprite : sprites) {
-                        sprite->mouseUp(event.button.x, event.button.y);
-                    }
-                    break;
+            if (event.type == SDL_QUIT) {
+                exit = true;
+            }
+            for (Sprite* sprite : sprites) {
+                sprite->handleEvent(event);
             }
         }
         
