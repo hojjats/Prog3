@@ -1,9 +1,13 @@
 #include "Session.hpp"
-#include "System.hpp"
+
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 
-#define FPS 60
+
+void Session::addBackground(char path[])
+{
+    background = IMG_LoadTexture(sys.ren,path);
+}
 
 void Session::add(Sprite* sprite) {
     added.push_back(sprite);
@@ -15,7 +19,7 @@ void Session::remove(Sprite* sprite) {
 
 void Session::run(){
     bool exit = false;
-    SDL_Texture* background = IMG_LoadTexture(sys.ren, "background.png");
+    //SDL_Texture* background = IMG_LoadTexture(sys->ren, "background.png");
     // These 3 rows can be removed if the variables is replaced with handcoded values: 700, 500, 2100
     int windowW, windowH, backgroundW;
     SDL_QueryTexture(background, NULL, NULL, &backgroundW, NULL);

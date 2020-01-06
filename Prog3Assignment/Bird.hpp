@@ -14,7 +14,7 @@ public:
     static Bird* getInstance(int y) {
         return new Bird(y);
     }
-    Bird(int y) : Sprite(320,220,40,40) {
+    Bird(int y) : Sprite(100,220,40,40) {
         texture = IMG_LoadTexture(sys.ren, "bird.png");
     }
     ~Bird() {
