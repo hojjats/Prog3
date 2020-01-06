@@ -15,7 +15,6 @@
 		703ED6A523ABAD38007C7001 /* libSDL2_image-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 703ED6A423ABAD38007C7001 /* libSDL2_image-2.0.0.dylib */; settings = {ATTRIBUTES = (Required, ); }; };
 		703ED6AA23ABB631007C7001 /* System.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 703ED6A823ABB631007C7001 /* System.cpp */; };
 		703ED6AD23ABB9DB007C7001 /* Session.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 703ED6AB23ABB9DB007C7001 /* Session.cpp */; };
-		703ED6B023ABC0C2007C7001 /* Component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 703ED6AE23ABC0C2007C7001 /* Component.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		6A2C9F0623AD0FE700607C79 /* bird.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bird.png; sourceTree = "<group>"; };
+		6A5D8E1523C3399A00ECC6A8 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		702FDECB23AD0635002E2AF0 /* Sprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sprite.cpp; sourceTree = "<group>"; };
 		702FDECC23AD0635002E2AF0 /* Sprite.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Sprite.hpp; sourceTree = "<group>"; };
 		702FDECE23AD0FC6002E2AF0 /* Bird.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Bird.cpp; sourceTree = "<group>"; };
@@ -46,8 +46,6 @@
 		703ED6A923ABB631007C7001 /* System.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = System.hpp; sourceTree = "<group>"; };
 		703ED6AB23ABB9DB007C7001 /* Session.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Session.cpp; sourceTree = "<group>"; };
 		703ED6AC23ABB9DB007C7001 /* Session.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Session.hpp; sourceTree = "<group>"; };
-		703ED6AE23ABC0C2007C7001 /* Component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Component.cpp; sourceTree = "<group>"; };
-		703ED6AF23ABC0C2007C7001 /* Component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Component.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,12 +87,11 @@
 				703ED6A723ABB078007C7001 /* Prog3Assignment.entitlements */,
 				703ED69523ABA904007C7001 /* main.cpp */,
 				6A2C9F0623AD0FE700607C79 /* bird.png */,
+				6A5D8E1523C3399A00ECC6A8 /* background.png */,
 				703ED6A823ABB631007C7001 /* System.cpp */,
 				703ED6A923ABB631007C7001 /* System.hpp */,
 				703ED6AB23ABB9DB007C7001 /* Session.cpp */,
 				703ED6AC23ABB9DB007C7001 /* Session.hpp */,
-				703ED6AE23ABC0C2007C7001 /* Component.cpp */,
-				703ED6AF23ABC0C2007C7001 /* Component.hpp */,
 				702FDECE23AD0FC6002E2AF0 /* Bird.cpp */,
 				702FDECF23AD0FC6002E2AF0 /* Bird.hpp */,
 			);
@@ -170,7 +167,6 @@
 			files = (
 				702FDED023AD0FC6002E2AF0 /* Bird.cpp in Sources */,
 				703ED6AA23ABB631007C7001 /* System.cpp in Sources */,
-				703ED6B023ABC0C2007C7001 /* Component.cpp in Sources */,
 				702FDECD23AD0635002E2AF0 /* Sprite.cpp in Sources */,
 				703ED6AD23ABB9DB007C7001 /* Session.cpp in Sources */,
 				703ED69623ABA904007C7001 /* main.cpp in Sources */,
