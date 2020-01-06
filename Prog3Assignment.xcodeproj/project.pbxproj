@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		702FDECD23AD0635002E2AF0 /* Sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 702FDECB23AD0635002E2AF0 /* Sprite.cpp */; };
 		702FDED023AD0FC6002E2AF0 /* Bird.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 702FDECE23AD0FC6002E2AF0 /* Bird.cpp */; };
+		7035331323C348180028D55A /* libSDL2_mixer-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7035331223C348180028D55A /* libSDL2_mixer-2.0.0.dylib */; };
 		703ED69623ABA904007C7001 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 703ED69523ABA904007C7001 /* main.cpp */; };
 		703ED69E23ABACFD007C7001 /* libSDL2-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 703ED69D23ABACFD007C7001 /* libSDL2-2.0.0.dylib */; };
 		703ED6A223ABAD20007C7001 /* libSDL2_ttf-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 703ED6A123ABAD20007C7001 /* libSDL2_ttf-2.0.0.dylib */; };
@@ -37,6 +38,7 @@
 		702FDECC23AD0635002E2AF0 /* Sprite.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Sprite.hpp; sourceTree = "<group>"; };
 		702FDECE23AD0FC6002E2AF0 /* Bird.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Bird.cpp; sourceTree = "<group>"; };
 		702FDECF23AD0FC6002E2AF0 /* Bird.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Bird.hpp; sourceTree = "<group>"; };
+		7035331223C348180028D55A /* libSDL2_mixer-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL2_mixer-2.0.0.dylib"; path = "../../../../../usr/local/Cellar/sdl2_mixer/2.0.4/lib/libSDL2_mixer-2.0.0.dylib"; sourceTree = "<group>"; };
 		703ED69223ABA904007C7001 /* Prog3Assignment */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Prog3Assignment; sourceTree = BUILT_PRODUCTS_DIR; };
 		703ED69523ABA904007C7001 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		703ED69D23ABACFD007C7001 /* libSDL2-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libSDL2-2.0.0.dylib"; path = "../../../../../usr/local/Cellar/sdl2/2.0.10/lib/libSDL2-2.0.0.dylib"; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7035331323C348180028D55A /* libSDL2_mixer-2.0.0.dylib in Frameworks */,
 				703ED6A523ABAD38007C7001 /* libSDL2_image-2.0.0.dylib in Frameworks */,
 				703ED69E23ABACFD007C7001 /* libSDL2-2.0.0.dylib in Frameworks */,
 				703ED6A223ABAD20007C7001 /* libSDL2_ttf-2.0.0.dylib in Frameworks */,
@@ -103,6 +106,7 @@
 		703ED69C23ABACFD007C7001 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7035331223C348180028D55A /* libSDL2_mixer-2.0.0.dylib */,
 				703ED6A423ABAD38007C7001 /* libSDL2_image-2.0.0.dylib */,
 				703ED6A123ABAD20007C7001 /* libSDL2_ttf-2.0.0.dylib */,
 				703ED69D23ABACFD007C7001 /* libSDL2-2.0.0.dylib */,
@@ -300,6 +304,7 @@
 					/usr/local/Cellar/sdl2/2.0.10/lib,
 					/usr/local/Cellar/sdl2_ttf/2.0.15/lib,
 					/usr/local/Cellar/sdl2_image/2.0.5/lib,
+					/usr/local/Cellar/sdl2_mixer/2.0.4/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -319,6 +324,7 @@
 					/usr/local/Cellar/sdl2/2.0.10/lib,
 					/usr/local/Cellar/sdl2_ttf/2.0.15/lib,
 					/usr/local/Cellar/sdl2_image/2.0.5/lib,
+					/usr/local/Cellar/sdl2_mixer/2.0.4/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

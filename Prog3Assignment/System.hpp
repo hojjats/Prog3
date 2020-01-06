@@ -2,6 +2,7 @@
 #define System_hpp
 
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_mixer.h>
 struct System
 {
     System();
@@ -9,6 +10,8 @@ struct System
     
     SDL_Window* win;
     SDL_Renderer* ren;
+    Mix_Chunk* music;
+    
     
 
 };
