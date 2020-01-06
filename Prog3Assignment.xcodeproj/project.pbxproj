@@ -31,6 +31,8 @@
 
 /* Begin PBXFileReference section */
 		6A2C9F0623AD0FE700607C79 /* bird.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bird.png; sourceTree = "<group>"; };
+		6A5D8E1523C3399A00ECC6A8 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		6A5D8E1623C33A6900ECC6A8 /* bird2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bird2.png; sourceTree = "<group>"; };
 		702FDECB23AD0635002E2AF0 /* Sprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sprite.cpp; sourceTree = "<group>"; };
 		702FDECC23AD0635002E2AF0 /* Sprite.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Sprite.hpp; sourceTree = "<group>"; };
 		702FDECE23AD0FC6002E2AF0 /* Bird.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Bird.cpp; sourceTree = "<group>"; };
@@ -86,6 +88,8 @@
 				703ED6A723ABB078007C7001 /* Prog3Assignment.entitlements */,
 				703ED69523ABA904007C7001 /* main.cpp */,
 				6A2C9F0623AD0FE700607C79 /* bird.png */,
+				6A5D8E1623C33A6900ECC6A8 /* bird2.png */,
+				6A5D8E1523C3399A00ECC6A8 /* background.png */,
 				703ED6A823ABB631007C7001 /* System.cpp */,
 				703ED6A923ABB631007C7001 /* System.hpp */,
 				703ED6AB23ABB9DB007C7001 /* Session.cpp */,
