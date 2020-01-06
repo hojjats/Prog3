@@ -67,10 +67,10 @@ void Session::run(){
             }
         }
         removed.clear();
-        
+            
         //        SDL_SetRenderDrawColor(sys.ren, 66,180,190, 255);
         //        SDL_RenderClear(sys.ren);
-        SDL_RenderCopy( sys.ren, background, &bgCrop, &bgRect );
+        SDL_RenderCopy(sys.ren, background, &bgCrop, &bgRect );
         for (Sprite* sprite: sprites){
             sprite->draw();
         }

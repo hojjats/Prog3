@@ -8,7 +8,7 @@ System::System() {
     win = SDL_CreateWindow("Game", 10, 10, WINDOW_WIDTH, WINDOW_HEIGHT, 0);
     ren = SDL_CreateRenderer(win, -1, 0);
     Mix_OpenAudio(20050, AUDIO_S16SYS, 2, 4096);
-    music = Mix_LoadWAV(__FILE_NAME__);
+    music = Mix_LoadWAV("bgm_action_4.wav");
     Mix_PlayChannel(-1, music, -1);
 }
 

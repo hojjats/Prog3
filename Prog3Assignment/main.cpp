@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include "Session.hpp"
 #include <SDL2/SDL.h>
@@ -8,17 +7,13 @@
 #include "Bird.hpp"
 #include "GameEngine.hpp"
 
+Session ses;
+
 
 int main(int argc, char** argv) {
-    std::cout<<"GameEngine made"<<std::endl;
-    GameEngine game;
-    game.addBackground("background.png");
-    std::cout<<"Background made"<<std::endl;
-    Bird* b = Bird::getInstance(10);
-    std::cout<<"Bird made"<<std::endl;
-    game.addSprite(b);
-    std::cout<<"Sprite made"<<std::endl;
-    game.run();
-    std::cout<<"run made"<<std::endl;
+    Bird bird;
+    ses.add(&bird);
+    ses.addBackground("background.png");
+    ses.run();
     return 0;
 }

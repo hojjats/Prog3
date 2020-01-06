@@ -1,7 +1,6 @@
-
-
 #ifndef Bird_hpp
 #define Bird_hpp
+
 #include "Sprite.hpp"
 #include "Session.hpp"
 #include "Session.hpp"
