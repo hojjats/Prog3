@@ -14,6 +14,7 @@ public:
     void addBackground(char path[]);
     void setFps(int fps);
     void run();
+    
 private:
     Session mSession;
 };

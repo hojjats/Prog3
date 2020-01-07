@@ -24,7 +24,6 @@ void addPipeSection(int gapCenter, int gapDistance)
 
 int main(int argc, char **argv)
 {
-    GameEngine game;
     //Bird bird;
     //ses.add(&bird);
     ses.addBackground("Assets/background.png");

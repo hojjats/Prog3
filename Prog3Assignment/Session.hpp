@@ -15,7 +15,11 @@ public:
     void addBackground(char path[]);
     void setFps(int fps){FPS = fps;}
     /***************** WARNING MEMORYLEAK need implement Session destructor and delete background texture ************************/
+
+    // Implement the different screens;
     bool startScreen();
+    bool gameScreen();
+    bool gameOverScreen();
     void showScore() const;
     void run();
     
