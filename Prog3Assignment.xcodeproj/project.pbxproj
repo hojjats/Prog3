@@ -10,6 +10,7 @@
 		6A5D8E1A23C3738800ECC6A8 /* Pipe.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6A5D8E1823C3738800ECC6A8 /* Pipe.cpp */; };
 		6AFC8B7D23C48AFA0098DD30 /* Obstacle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6AFC8B7623C48AFA0098DD30 /* Obstacle.cpp */; };
 		6AFC8B7E23C48AFA0098DD30 /* GameEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6AFC8B7823C48AFA0098DD30 /* GameEngine.cpp */; };
+		6AFC8B8223C4AB210098DD30 /* Ground.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6AFC8B8023C4AB210098DD30 /* Ground.cpp */; };
 		702FDECD23AD0635002E2AF0 /* Sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 702FDECB23AD0635002E2AF0 /* Sprite.cpp */; };
 		702FDED023AD0FC6002E2AF0 /* Bird.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 702FDECE23AD0FC6002E2AF0 /* Bird.cpp */; };
 		7035331323C348180028D55A /* libSDL2_mixer-2.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7035331223C348180028D55A /* libSDL2_mixer-2.0.0.dylib */; };
@@ -48,6 +49,9 @@
 		6AFC8B7A23C48AFA0098DD30 /* Obstacle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Obstacle.h; sourceTree = "<group>"; };
 		6AFC8B7B23C48AFA0098DD30 /* GameEngine.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GameEngine.hpp; sourceTree = "<group>"; };
 		6AFC8B7C23C48AFA0098DD30 /* bgm_action_4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bgm_action_4.wav; sourceTree = "<group>"; };
+		6AFC8B7F23C4AABE0098DD30 /* ground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ground.png; sourceTree = "<group>"; };
+		6AFC8B8023C4AB210098DD30 /* Ground.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Ground.cpp; sourceTree = "<group>"; };
+		6AFC8B8123C4AB210098DD30 /* Ground.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Ground.hpp; sourceTree = "<group>"; };
 		702FDECB23AD0635002E2AF0 /* Sprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sprite.cpp; sourceTree = "<group>"; };
 		702FDECC23AD0635002E2AF0 /* Sprite.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Sprite.hpp; sourceTree = "<group>"; };
 		702FDECE23AD0FC6002E2AF0 /* Bird.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Bird.cpp; sourceTree = "<group>"; };
@@ -116,6 +120,9 @@
 				6A2C9F0623AD0FE700607C79 /* bird.png */,
 				6A5D8E1623C33A6900ECC6A8 /* bird2.png */,
 				6A5D8E1523C3399A00ECC6A8 /* background.png */,
+				6AFC8B7F23C4AABE0098DD30 /* ground.png */,
+				6AFC8B8023C4AB210098DD30 /* Ground.cpp */,
+				6AFC8B8123C4AB210098DD30 /* Ground.hpp */,
 				703ED6A823ABB631007C7001 /* System.cpp */,
 				703ED6A923ABB631007C7001 /* System.hpp */,
 				703ED6AB23ABB9DB007C7001 /* Session.cpp */,
@@ -203,6 +210,7 @@
 				703ED6AD23ABB9DB007C7001 /* Session.cpp in Sources */,
 				703ED69623ABA904007C7001 /* main.cpp in Sources */,
 				6AFC8B7D23C48AFA0098DD30 /* Obstacle.cpp in Sources */,
+				6AFC8B8223C4AB210098DD30 /* Ground.cpp in Sources */,
 				6AFC8B7E23C48AFA0098DD30 /* GameEngine.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
