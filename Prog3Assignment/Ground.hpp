@@ -20,7 +20,7 @@ public:
     void tick() override;
     void draw() const override;
 private:
-    SDL_Texture* texture = IMG_LoadTexture(sys.ren, "ground.png");
+    SDL_Texture* texture = IMG_LoadTexture(sys.ren, "Assets/ground.png");
     SDL_Rect crop;
 };
 
