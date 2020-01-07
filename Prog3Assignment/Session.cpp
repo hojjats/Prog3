@@ -61,7 +61,8 @@ bool Session::startScreen()
         {
             if(event.type == SDL_QUIT)
             {
-                return false;
+                gameStart = false;
+                break;
             }
 
             if(event.type == SDL_KEYDOWN)
@@ -69,7 +70,6 @@ bool Session::startScreen()
                 if(event.key.keysym.sym == SDLK_SPACE)
                 {
                     gameStart = true;
-                    return true;
                 }
             }
         } // Poll event 
@@ -93,6 +93,7 @@ bool Session::startScreen()
     SDL_DestroyTexture(blackMessage);
     SDL_DestroyTexture(whiteMessage);
     TTF_CloseFont(arcadeFont);
+    return gameStart;
 }
 
 void Session::showScore() const
