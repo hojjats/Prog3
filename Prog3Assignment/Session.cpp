@@ -160,7 +160,7 @@ void Session::run(){
             } else {
                 if (player.checkCollision(player.getRect(), sprite->getRect())) {
                     std::cout << "hit"<< std::endl;
-                    startScreen();
+                    exit = !startScreen();
                     break;
                 }
             }
