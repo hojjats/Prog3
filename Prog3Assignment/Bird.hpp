@@ -17,8 +17,8 @@ public:
     void tick() override;
 private:
     SDL_Texture* texture;
-    SDL_Texture* tex1 = IMG_LoadTexture(sys.ren, "bird.png");
-    SDL_Texture* tex2 = IMG_LoadTexture(sys.ren, "bird2.png");
+    SDL_Texture* tex1 = IMG_LoadTexture(sys.ren, "Assets/bird.png");
+    SDL_Texture* tex2 = IMG_LoadTexture(sys.ren, "Assets/bird2.png");
     int counter = 0;
     float velocity = 0;
     bool jumped = false;

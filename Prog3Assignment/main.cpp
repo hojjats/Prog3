@@ -26,7 +26,7 @@ int main(int argc, char **argv)
     GameEngine game;
     //Bird bird;
     //ses.add(&bird);
-    ses.addBackground("background.png");
+    ses.addBackground("Assets/background.png");
 
     addPipeSection(250, 300);
 

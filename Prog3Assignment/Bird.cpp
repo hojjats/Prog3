@@ -3,7 +3,7 @@
 #include "Bird.hpp"
 
 Bird::Bird(): Sprite(320, 220, 40, 40){
-    texture = IMG_LoadTexture(sys.ren, "bird.png");
+    texture = IMG_LoadTexture(sys.ren, "Assets/bird.png");
 }
 
 Bird::~Bird(){

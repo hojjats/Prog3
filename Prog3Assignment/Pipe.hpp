@@ -20,7 +20,7 @@ public:
     void tick() override;
     void draw() const override;
 private:
-    SDL_Texture* texture = IMG_LoadTexture(sys.ren, "pipe.png");
+    SDL_Texture* texture = IMG_LoadTexture(sys.ren, "Assets/pipe.png");
     int gapCenter;
     int gapDistance;
     int isTop;

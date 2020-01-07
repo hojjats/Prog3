@@ -7,7 +7,6 @@
 #include "Bird.hpp"
 #include <iostream>
 
-
 void Session::addBackground(char path[])
 {
     background = IMG_LoadTexture(sys.ren,path);
@@ -27,8 +26,8 @@ bool Session::startScreen()
     bool gameStart = false;
     bool exit = false;
     int windowW, windowH, backgroundW;
-    sys.setMusic("bgm_menu.wav");
-    TTF_Font* arcadeFont = TTF_OpenFont("ARCADE_N.TTF",24);
+    sys.setMusic("Assets/bgm_menu.wav");
+    TTF_Font* arcadeFont = TTF_OpenFont("Assets/ARCADE_N.TTF",24);
     SDL_Color white ={255,255,255,255};
     SDL_Color black ={0,0,0,255};
     SDL_Surface* whiteText = TTF_RenderText_Solid(arcadeFont,"PRESS SPACE TO START",white);
@@ -104,8 +103,8 @@ void Session::showScore() const
 {
     std::string temp = std::to_string(score);
     char const *scoreArr = temp.c_str();
-    TTF_Font* arcadeFont = TTF_OpenFont("ARCADE_N.TTF",16);
-    SDL_Color black ={0,0,0,255};
+    TTF_Font* arcadeFont = TTF_OpenFont("Assets/ARCADE_N.TTF",16);
+    SDL_Color black = {0,0,0,255};
     SDL_Surface* blackText = TTF_RenderText_Solid(arcadeFont,scoreArr,black);
     SDL_Texture* blackScore = SDL_CreateTextureFromSurface(sys.ren,blackText);
     SDL_FreeSurface(blackText);
@@ -136,7 +135,7 @@ void Session::run(){
     if(!startScreen()){
         exit = true;
     }
-    sys.setMusic("bgm_action_4.wav");
+    sys.setMusic("Assets/bgm_action_4.wav");
 
     while (!exit) {
         SDL_Event event;
@@ -165,7 +164,7 @@ void Session::run(){
                 }
             }
         }
-        
+
         // "tick" the background, if last section is displayed -> resets to zero
         bgCrop.x++;
         if (bgCrop.x >= backgroundW - windowW) {
@@ -205,6 +204,8 @@ void Session::run(){
         if (delay > 0)
             SDL_Delay(delay);
     } // Game Loop  
+
+    // Game loop as its own function, so that we can call a reset on game over
 }
 
 
