@@ -4,6 +4,8 @@
 #include <SDL2/SDL_image.h>
 #include <SDL2/SDL_ttf.h>
 #include <string>
+#include "Bird.hpp"
+#include <iostream>
 
 
 void Session::addBackground(char path[])
@@ -117,6 +119,8 @@ void Session::showScore() const
 }
 
 void Session::run(){
+    Bird player;
+    add(&player);
     bool exit = false;
     //SDL_Texture* background = IMG_LoadTexture(sys->ren, "background.png");
     // These 3 rows can be removed if the variables is replaced with handcoded values: 700, 500, 2100
@@ -148,6 +152,18 @@ void Session::run(){
         
         for (Sprite* sprite : sprites) {
             sprite->tick();
+        }
+        
+        // Check collision needs reference to a bird in implementation. a sprite player pointer.
+        for (Sprite* sprite : sprites) {
+            if (Bird* b = dynamic_cast<Bird*>(sprite) ) {
+            } else {
+                if (player.checkCollision(player.getRect(), sprite->getRect())) {
+                    std::cout << "hit"<< std::endl;
+                    exit = !startScreen();
+                    break;
+                }
+            }
         }
         
         // "tick" the background, if last section is displayed -> resets to zero
