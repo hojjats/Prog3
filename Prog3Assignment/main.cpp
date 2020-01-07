@@ -11,25 +11,26 @@
 
 Session ses;
 
-void addPipeSection(int gapCenter, int gapDistance) {
+void addPipeSection(int gapCenter, int gapDistance)
+{
     const int screenH = 500, pipeH = 700;
-    int y =  screenH - gapCenter + (gapDistance/2);
-    Pipe* bottom = new Pipe(gapCenter, gapDistance, false, y);
+    int y = screenH - gapCenter + (gapDistance / 2);
+    Pipe *bottom = new Pipe(gapCenter, gapDistance, false, y);
     ses.add(bottom);
-    y = -pipeH + (screenH - gapCenter - (gapDistance/2));
-    Pipe* top  = new Pipe(gapCenter, gapDistance, true, y);
+    y = -pipeH + (screenH - gapCenter - (gapDistance / 2));
+    Pipe *top = new Pipe(gapCenter, gapDistance, true, y);
     ses.add(top);
 }
 
-int main(int argc, char** argv) {
+int main(int argc, char **argv)
+{
     GameEngine game;
-    Bird bird;
-    ses.add(&bird);
+    //Bird bird;
+    //ses.add(&bird);
     ses.addBackground("background.png");
-    addPipeSection(250, 100);
+    addPipeSection(250, 300);
     Ground ground;
     ses.add(&ground);
     ses.run();
     return 0;
 }
-
