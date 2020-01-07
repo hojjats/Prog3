@@ -91,6 +91,7 @@ bool Session::startScreen()
 
 
     } // While Gamestart
+    return false;
 }
 
 void Session::run(){
