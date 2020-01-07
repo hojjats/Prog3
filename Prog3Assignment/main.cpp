@@ -25,9 +25,7 @@ int main(int argc, char** argv) {
     Bird bird;
     ses.add(&bird);
     ses.addBackground("background.png");
-    
     addPipeSection(250, 100);
-    
     ses.run();
     return 0;
 }

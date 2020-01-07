@@ -5,6 +5,7 @@
 Bird::Bird(): Sprite(320, 220, 40, 40){
     texture = IMG_LoadTexture(sys.ren, "bird.png");
 }
+
 Bird::~Bird(){
     SDL_DestroyTexture(texture);
     SDL_DestroyTexture(tex1);
@@ -41,7 +42,8 @@ void Bird::tick() {
     const static float lift = -0.3;
     velocity += gravity;
     timeSinceJump += 1000 / FPS;
-    if (jumped && timeSinceJump > 0.3) {
+    if (jumped && timeSinceJump > 0.3)
+    {
         velocity += lift;
         timeSinceJump = 0;
         jumped = false;
