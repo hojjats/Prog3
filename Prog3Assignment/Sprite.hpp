@@ -11,6 +11,7 @@ public:
     virtual void tick() = 0;
     virtual ~Sprite(){}
     virtual void handleEvent(SDL_Event event) = 0;
+    bool checkCollision(const SDL_Rect a, const SDL_Rect b);
     void setFPS(int fps){FPS = fps;}
 protected:
     Sprite(int x, int y, int w, int h) : rect{ x,y,w,h } {}
