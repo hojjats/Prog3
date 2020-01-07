@@ -6,6 +6,7 @@
 #include "Sprite.hpp"
 #include "Bird.hpp"
 #include "Pipe.hpp"
+#include "Ground.hpp"
 #include "GameEngine.hpp"
 
 Session ses;
@@ -26,6 +27,8 @@ int main(int argc, char** argv) {
     ses.add(&bird);
     ses.addBackground("background.png");
     addPipeSection(250, 100);
+    Ground ground;
+    ses.add(&ground);
     ses.run();
     return 0;
 }
