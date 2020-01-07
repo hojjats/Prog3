@@ -25,6 +25,7 @@ bool Session::startScreen()
     bool gameStart = false;
     bool exit = false;
     int windowW, windowH, backgroundW;
+    sys.setMusic("bgm_menu.wav");
     TTF_Font* arcadeFont = TTF_OpenFont("ARCADE_N.TTF",24);
     SDL_Color white ={255,255,255,255};
     SDL_Color black ={0,0,0,255};
@@ -112,13 +113,12 @@ void Session::showScore() const
     rect.w = 50;
     rect.h = 50;
     SDL_RenderCopy(sys.ren,blackScore,NULL,&rect);
-
     /***************** WARNING MEMORYLEAK need to delete blackScore texture somewhere ************************/
 }
 
 void Session::run(){
     bool exit = false;
-    //SDL_Texture* background = IMG_LoadTexture(sys->ren, "background.png");
+    // SDL_Texture* background = IMG_LoadTexture(sys->ren, "background.png");
     // These 3 rows can be removed if the variables is replaced with handcoded values: 700, 500, 2100
     int windowW, windowH, backgroundW;
     SDL_QueryTexture(background, NULL, NULL, &backgroundW, NULL);
@@ -128,7 +128,7 @@ void Session::run(){
     SDL_Rect bgRect = { 0, 0, windowW, windowH };
     
     Uint32 tickInterval = 1000 / FPS;
-    
+
     if(!startScreen()){
         exit = true;
     }
@@ -149,7 +149,7 @@ void Session::run(){
         for (Sprite* sprite : sprites) {
             sprite->tick();
         }
-        
+
         // "tick" the background, if last section is displayed -> resets to zero
         bgCrop.x++;
         if (bgCrop.x >= backgroundW - windowW) {
@@ -188,9 +188,7 @@ void Session::run(){
         int delay = nextTick - SDL_GetTicks();
         if (delay > 0)
             SDL_Delay(delay);
-    } // Game Loop
-    
-    
+    } // Game Loop  
 }
 
 
