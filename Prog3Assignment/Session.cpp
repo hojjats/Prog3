@@ -3,6 +3,7 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 #include <SDL2/SDL_ttf.h>
+#include <string>
 
 
 void Session::addBackground(char path[])
@@ -23,7 +24,6 @@ bool Session::startScreen()
 {   
     bool gameStart = false;
     int windowW, windowH, backgroundW;
-    TTF_Init();
     TTF_Font* arcadeFont = TTF_OpenFont("ARCADE_N.TTF",24);
     SDL_Color white ={255,255,255,255};
     SDL_Color black ={0,0,0,255};
@@ -37,13 +37,13 @@ bool Session::startScreen()
     whiteMessageRect.x = 100;
     whiteMessageRect.y = 200;
     whiteMessageRect.w = 500;
-    whiteMessageRect.h = 100;
+    whiteMessageRect.h = 40;
 
     SDL_Rect blackMessageRect;
     blackMessageRect.x = 98;
     blackMessageRect.y = 202;
     blackMessageRect.w = 500;
-    blackMessageRect.h = 100;
+    blackMessageRect.h = 40;
 
 
     Uint32 tickInterval = 1000 / FPS;
@@ -73,6 +73,7 @@ bool Session::startScreen()
                 }
             }
         } // Poll event 
+
         bgCrop.x++;
         if (bgCrop.x >= backgroundW - windowW) {
             bgCrop.x = 0;
@@ -82,15 +83,35 @@ bool Session::startScreen()
         SDL_RenderCopy(sys.ren, background,&bgCrop, &bgRect );
         SDL_RenderCopy(sys.ren,blackMessage,NULL,&blackMessageRect);
         SDL_RenderCopy(sys.ren,whiteMessage,NULL,&whiteMessageRect);          
-    
         SDL_RenderPresent(sys.ren);
+
         int delay = nextTick - SDL_GetTicks();
         if (delay > 0){
             SDL_Delay(delay);
         }
-
-
     } // While Gamestart
+    SDL_DestroyTexture(blackMessage);
+    SDL_DestroyTexture(whiteMessage);
+    TTF_CloseFont(arcadeFont);
+}
+
+void Session::showScore() const
+{
+    std::string temp = std::to_string(score);
+    char const *scoreArr = temp.c_str();
+    TTF_Font* arcadeFont = TTF_OpenFont("ARCADE_N.TTF",16);
+    SDL_Color black ={0,0,0,255};
+    SDL_Surface* blackText = TTF_RenderText_Solid(arcadeFont,scoreArr,black);
+    SDL_Texture* blackScore = SDL_CreateTextureFromSurface(sys.ren,blackText);
+    SDL_FreeSurface(blackText);
+    SDL_Rect rect;
+    rect.x = 350;
+    rect.y = 50;
+    rect.w = 50;
+    rect.h = 50;
+    SDL_RenderCopy(sys.ren,blackScore,NULL,&rect);
+
+    /***************** WARNING MEMORYLEAK need to delete blackScore texture somewhere ************************/
 }
 
 void Session::run(){
@@ -146,6 +167,11 @@ void Session::run(){
                     i++;
             }
         }
+
+        for(int i = 0; i < removed.size();i++)
+        {
+            delete removed[i];
+        }
         removed.clear();
 
         //        SDL_SetRenderDrawColor(sys.ren, 66,180,190, 255);
@@ -154,12 +180,13 @@ void Session::run(){
         for (Sprite* sprite: sprites){
             sprite->draw();
         }
+        showScore();
         SDL_RenderPresent(sys.ren);
-        
         int delay = nextTick - SDL_GetTicks();
         if (delay > 0)
             SDL_Delay(delay);
     }
+    
     
 }
 

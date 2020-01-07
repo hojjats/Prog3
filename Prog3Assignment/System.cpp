@@ -5,6 +5,7 @@ static const int WINDOW_HEIGHT = 500;
 
 System::System() {
     SDL_Init(SDL_INIT_EVERYTHING);
+    TTF_Init();
     win = SDL_CreateWindow("Game", 10, 10, WINDOW_WIDTH, WINDOW_HEIGHT, 0);
     ren = SDL_CreateRenderer(win, -1, 0);
     Mix_OpenAudio(20050, AUDIO_S16SYS, 2, 4096);
@@ -22,6 +23,7 @@ void System::setMusic(char path[])
 System::~System() {
     Mix_FreeChunk(music);
     Mix_CloseAudio();
+    TTF_Quit();
     SDL_DestroyWindow(win);
     SDL_DestroyRenderer(ren);
     SDL_Quit();

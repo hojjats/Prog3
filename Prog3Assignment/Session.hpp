@@ -1,5 +1,6 @@
 #include "System.hpp"
 
+
 #ifndef Session_hpp
 #define Session_hpp
 
@@ -13,8 +14,9 @@ public:
     void remove(Sprite* sprite);
     void addBackground(char path[]);
     void setFps(int fps){FPS = fps;}
-
+    /***************** WARNING MEMORYLEAK need implement Session destructor and delete background texture ************************/
     bool startScreen();
+    void showScore() const;
     void run();
     
 private:
@@ -22,6 +24,7 @@ private:
     std::vector<Sprite*> added, removed;
     int FPS = 60;
     SDL_Texture* background;
+    int score = 0;
 };
 
 #endif /* Session_hpp */

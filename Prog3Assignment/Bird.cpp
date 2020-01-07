@@ -7,6 +7,8 @@ Bird::Bird(): Sprite(320, 220, 40, 40){
 }
 Bird::~Bird(){
     SDL_DestroyTexture(texture);
+    SDL_DestroyTexture(tex1);
+    SDL_DestroyTexture(tex2);
 }
 
 void Bird::handleEvent(SDL_Event event){

@@ -20,7 +20,6 @@ void addPipeSection(int gapCenter, int gapDistance) {
     ses.add(top);
 }
 
-
 int main(int argc, char** argv) {
     GameEngine game;
     Bird bird;
