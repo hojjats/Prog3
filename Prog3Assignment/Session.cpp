@@ -23,6 +23,7 @@ void Session::remove(Sprite* sprite) {
 bool Session::startScreen()
 {   
     bool gameStart = false;
+    bool exit = false;
     int windowW, windowH, backgroundW;
     TTF_Font* arcadeFont = TTF_OpenFont("ARCADE_N.TTF",24);
     SDL_Color white ={255,255,255,255};
@@ -45,7 +46,6 @@ bool Session::startScreen()
     blackMessageRect.w = 500;
     blackMessageRect.h = 40;
 
-
     Uint32 tickInterval = 1000 / FPS;
     SDL_QueryTexture(background, NULL, NULL, &backgroundW, NULL);
     SDL_GetWindowSize(sys.win, &windowW,&windowH);
@@ -54,7 +54,7 @@ bool Session::startScreen()
     SDL_Rect bgRect = { 0, 0, windowW, windowH };
 
     SDL_Event event;
-    while(!gameStart)
+    while(!exit)
     {
         Uint32 nextTick = SDL_GetTicks() + tickInterval;
         while(SDL_PollEvent(&event))
@@ -62,7 +62,7 @@ bool Session::startScreen()
             if(event.type == SDL_QUIT)
             {
                 gameStart = false;
-                break;
+                exit = true;
             }
 
             if(event.type == SDL_KEYDOWN)
@@ -70,6 +70,7 @@ bool Session::startScreen()
                 if(event.key.keysym.sym == SDLK_SPACE)
                 {
                     gameStart = true;
+                    exit = true;
                 }
             }
         } // Poll event 
@@ -127,6 +128,7 @@ void Session::run(){
     SDL_Rect bgRect = { 0, 0, windowW, windowH };
     
     Uint32 tickInterval = 1000 / FPS;
+    
     if(!startScreen()){
         exit = true;
     }
@@ -142,7 +144,7 @@ void Session::run(){
             for (Sprite* sprite : sprites) {
                 sprite->handleEvent(event);
             }
-        }
+        } // Event Loop
         
         for (Sprite* sprite : sprites) {
             sprite->tick();
@@ -175,8 +177,8 @@ void Session::run(){
         }
         removed.clear();
 
-        //        SDL_SetRenderDrawColor(sys.ren, 66,180,190, 255);
-        //        SDL_RenderClear(sys.ren);
+        //SDL_SetRenderDrawColor(sys.ren, 66,180,190, 255);
+        SDL_RenderClear(sys.ren);
         SDL_RenderCopy(sys.ren, background, &bgCrop, &bgRect );
         for (Sprite* sprite: sprites){
             sprite->draw();
@@ -186,7 +188,7 @@ void Session::run(){
         int delay = nextTick - SDL_GetTicks();
         if (delay > 0)
             SDL_Delay(delay);
-    }
+    } // Game Loop
     
     
 }
