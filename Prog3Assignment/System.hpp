@@ -11,12 +11,11 @@ struct System
     SDL_Window* win;
     SDL_Renderer* ren;
     Mix_Chunk* music;
-    
-    
 
+    void setMusic(char path[]);
 };
 
- extern System sys;   
+extern System sys;   
 
 
 #endif /* System_hpp */

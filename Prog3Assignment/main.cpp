@@ -9,11 +9,11 @@
 
 Session ses;
 
-
 int main(int argc, char** argv) {
+    GameEngine game;
     Bird bird;
-    ses.add(&bird);
-    ses.addBackground("background.png");
-    ses.run();
+    game.addSprite(&bird);
+    game.addBackground("background.png");
+    game.run();
     return 0;
 }

@@ -13,6 +13,8 @@ public:
     void remove(Sprite* sprite);
     void addBackground(char path[]);
     void setFps(int fps){FPS = fps;}
+
+    bool startScreen();
     void run();
     
 private:

@@ -38,7 +38,7 @@ void Bird::tick() {
     const static float gravity = 0.01;
     const static float lift = -0.3;
     velocity += gravity;
-    timeSinceJump += 1000 / 60;
+    timeSinceJump += 1000 / FPS;
     if (jumped && timeSinceJump > 0.3) {
         velocity += lift;
         timeSinceJump = 0;
