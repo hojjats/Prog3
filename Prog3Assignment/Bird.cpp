@@ -46,12 +46,14 @@ void Bird::tick() {
         timeSinceJump = 0;
         jumped = false;
     }
+    
+    velocity = std::max(velocity, -0.4f);
+    velocity = std::min(velocity, 0.4f);
+    
     double deltaY = velocity * (1000/60);
     if (rect.y + deltaY < 0) {
         rect.y = 0;
     } else {
         rect.y += deltaY;
     }
-    
-    
 }
