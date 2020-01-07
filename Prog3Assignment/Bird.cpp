@@ -47,6 +47,11 @@ void Bird::tick() {
         jumped = false;
     }
     double deltaY = velocity * (1000/60);
-    rect.y += deltaY;
+    if (rect.y + deltaY < 0) {
+        rect.y = 0;
+    } else {
+        rect.y += deltaY;
+    }
+    
     
 }
