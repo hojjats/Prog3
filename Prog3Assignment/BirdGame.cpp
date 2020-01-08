@@ -12,6 +12,7 @@ void addPipeSection(int gapCenter, int gapDistance);
 
 void BirdGame::start() {
     GameEngine ge;
+    ge.setMusic("Assets/bgm_menu.wav");
     Bird* bird = Bird::getInstance("Assets/bird.png", "Assets/bird2.png");
     Ground* ground = Ground::getInstance("Assets/ground.png");
     Background* bg = Background::getInstance("Assets/background.png", { 0,0,700,500}, { 0,0,700,500});
@@ -55,6 +56,7 @@ void BirdGame::start() {
 }
 
 void BirdGame::setupGame(GameEngine* ge, Bird* bird) {
+    ge->setMusic("Assets/bgm_action_4.wav");
     ge->add(bird);
     addPipeSection(ge, 200, 200);
     Ground* ground = Ground::getInstance("Assets/ground.png");

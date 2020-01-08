@@ -14,7 +14,7 @@ public:
     void add(Sprite* sprite);
     void remove(Sprite* sprite);
     void addBackground(char path[]);
-    void setMusic(char path[]);
+    void setMusic(const char path[]);
     void setFps(int fps){
         FPS = fps;
         tickInterval = 1000 / FPS;
