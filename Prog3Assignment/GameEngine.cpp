@@ -19,6 +19,10 @@ void GameEngine::remove(Sprite* sprite) {
     removed.push_back(sprite);
 }
 
+void GameEngine::clearSprites() {
+    sprites.clear();
+}
+
 bool GameEngine::pollEvents() {
     SDL_Event event;
     while(SDL_PollEvent(&event))
@@ -27,13 +31,8 @@ bool GameEngine::pollEvents() {
         {
             return false;
         }
-
-        if(event.type == SDL_KEYDOWN)
-        {
-            if(event.key.keysym.sym == SDLK_SPACE)
-            {
-                
-            }
+        for (Sprite* sprite : sprites) {
+            sprite->handleEvent(event);
         }
     } // Poll event
     return true;

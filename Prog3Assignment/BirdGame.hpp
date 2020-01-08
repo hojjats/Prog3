@@ -20,10 +20,13 @@
 
 class BirdGame {
 public:
-    void start();
-    void setupGame(GameEngine* ge, Bird* bird);
-    void addPipeSection(GameEngine* ge, int gapCenter, int gapDistance);
+    BirdGame();
+    bool startScreen();
+    Pipe* addPipeSection(int gapCenter, int gapDistance);
+    bool newGame();
+    void run();
 private:
+    GameEngine ge;
 };
 
 #endif /* BirdGame_hpp */

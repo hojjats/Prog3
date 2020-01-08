@@ -25,6 +25,7 @@ public:
     void update();
     bool checkCollisions(Sprite &sprite);
     void render();
+    void clearSprites();
     
 private:
     System mSys;
