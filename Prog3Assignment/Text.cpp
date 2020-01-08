@@ -9,16 +9,16 @@
 #include "Text.hpp"
 #include <cstring>
 
-Text* Text::getInstance(const char msg[], const char fontPath[], SDL_Rect rect)
+Text* Text::getInstance(std::string msg, const char fontPath[], SDL_Rect rect)
 {
     return new Text(msg,fontPath,rect);
 }
 
-Text::Text(const char msg[], const char fontPath[], SDL_Rect rect) : Sprite(rect.x, rect.y, rect.w, rect.h,false) {
-    this->font = TTF_OpenFont(fontPath, 24);
-    strcpy(this->msg, msg);
+Text::Text(std::string msg, const char fontPath[], SDL_Rect rect) : Sprite(rect.x, rect.y, rect.w, rect.h,false) {
+    font = TTF_OpenFont(fontPath, 24);
+    msg = msg;
 
-    this->shadow = {
+    shadow = {
         rect.x - 2,
         rect.y + 2,
         rect.w,
@@ -37,10 +37,10 @@ void Text::handleEvent(SDL_Event event) {};
 void Text::tick() {};
 
 void Text::generateTexture(SDL_Renderer *ren) {
-    SDL_Surface* whiteText = TTF_RenderText_Solid(font,msg,white);
-    SDL_Surface* blackText = TTF_RenderText_Solid(font,msg,black);
-    this->whiteMessage = SDL_CreateTextureFromSurface(ren,whiteText);
-    this->blackMessage = SDL_CreateTextureFromSurface(ren,blackText);
+    SDL_Surface* whiteText = TTF_RenderText_Solid(font,msg.c_str(),white);
+    SDL_Surface* blackText = TTF_RenderText_Solid(font,msg.c_str(),black);
+    whiteMessage = SDL_CreateTextureFromSurface(ren,whiteText);
+    blackMessage = SDL_CreateTextureFromSurface(ren,blackText);
     SDL_FreeSurface(whiteText);
     SDL_FreeSurface(blackText);
 }
