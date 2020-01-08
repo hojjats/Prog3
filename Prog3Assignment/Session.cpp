@@ -136,7 +136,7 @@ void Session::run(){
         exit = true;
     }
     sys.setMusic("Assets/bgm_action_4.wav");
-
+    bool reset = false;
     while (!exit) {
         SDL_Event event;
         Uint32 nextTick = SDL_GetTicks() + tickInterval;
@@ -159,6 +159,7 @@ void Session::run(){
             } else {
                 if (player.checkCollision(player.getRect(), sprite->getRect())) {
                     std::cout << "hit"<< std::endl;
+                    reset = true;
                     exit = !startScreen();
                     break;
                 }
