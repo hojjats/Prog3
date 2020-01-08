@@ -14,7 +14,7 @@ System::System() {
     // Mix_PlayChannel(-1, music, -1);
 }
 
-void System::setMusic(char path[])
+void System::setMusic(const char path[])
 {
     Mix_FreeChunk(music);
     music = Mix_LoadWAV(path);
@@ -30,5 +30,5 @@ System::~System() {
     SDL_Quit();
 }
 
-System sys;
+// System sys;
 

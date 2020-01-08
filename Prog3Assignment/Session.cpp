@@ -7,6 +7,7 @@
 #include "Bird.hpp"
 #include <iostream>
 
+/*
 void Session::addBackground(char path[])
 {
     background = IMG_LoadTexture(sys.ren,path);
@@ -114,7 +115,7 @@ void Session::showScore() const
     rect.w = 50;
     rect.h = 50;
     SDL_RenderCopy(sys.ren,blackScore,NULL,&rect);
-    /***************** WARNING MEMORYLEAK need to delete blackScore texture somewhere ************************/
+    // WARNING MEMORYLEAK need to delete blackScore texture somewhere
 }
 
 void Session::run(){
@@ -209,4 +210,4 @@ void Session::run(){
     // Game loop as its own function, so that we can call a reset on game over
 }
 
-
+*/

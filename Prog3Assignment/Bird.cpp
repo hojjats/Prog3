@@ -2,14 +2,26 @@
 
 #include "Bird.hpp"
 
-Bird::Bird(): Sprite(320, 220, 40, 40){
-    texture = IMG_LoadTexture(sys.ren, "Assets/bird.png");
+Bird* Bird::getInstance(std::string path1, std::string path2)
+{
+    return new Bird(path1,path2);
+}
+
+Bird::Bird(std::string path1, std::string path2): Sprite(320, 220, 40, 40, true){
+    this->path1 = path1;
+    this->path2 = path2;
 }
 
 Bird::~Bird(){
     SDL_DestroyTexture(texture);
     SDL_DestroyTexture(tex1);
     SDL_DestroyTexture(tex2);
+}
+
+void Bird::generateTexture(SDL_Renderer *ren) {
+    this->tex1 = IMG_LoadTexture(ren, path1.c_str());
+    this->tex2 = IMG_LoadTexture(ren, path2.c_str());
+    this->texture = tex1;
 }
 
 void Bird::handleEvent(SDL_Event event){
@@ -32,9 +44,9 @@ void Bird::handleEvent(SDL_Event event){
     }
 }
 
-void Bird::draw() const {
+void Bird::draw(SDL_Renderer* ren) const {
     SDL_Rect rect = getRect();
-    SDL_RenderCopy(sys.ren, texture, NULL, &rect);
+    SDL_RenderCopy(ren, texture, NULL, &rect);
 }
 
 void Bird::tick() {
