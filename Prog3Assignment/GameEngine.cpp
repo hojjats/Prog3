@@ -10,6 +10,7 @@ void GameEngine::addBackground(char path[])
 }
 
 void GameEngine::add(Sprite* sprite) {
+    sprite->generateTexture(mSys.ren);
     sprite->setFPS(FPS);
     added.push_back(sprite);
 }
