@@ -14,13 +14,14 @@
 
 class Background : public Sprite {
 public:
-    Background(std::string path, SDL_Rect rect, SDL_Rect crop);
+    static Background* getInstance(std::string path, SDL_Rect rect, SDL_Rect crop);
     ~Background();
     void handleEvent(SDL_Event event) override;
     void tick() override;
     void draw(SDL_Renderer* ren) const override;
     void generateTexture(SDL_Renderer* ren) override;
 private:
+    Background(std::string path, SDL_Rect rect, SDL_Rect crop);
     SDL_Texture* texture = nullptr;
     SDL_Rect crop;
     std::string path;

@@ -8,6 +8,11 @@
 
 #include "Background.hpp"
 
+Background* Background::getInstance(std::string path, SDL_Rect rect, SDL_Rect crop)
+{
+    return new Background(path,rect,crop);
+}
+
 Background::Background(std::string path, SDL_Rect rect, SDL_Rect crop) : Sprite(rect.x,rect.y, rect.w, rect.h)  {
     this->path = path;
     this->crop = crop;
