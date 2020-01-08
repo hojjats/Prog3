@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6A24366023C5EE9B0023BD4C /* Background.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6A24365E23C5EE9B0023BD4C /* Background.cpp */; };
 		6A24366323C5F63D0023BD4C /* Text.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6A24366123C5F63D0023BD4C /* Text.cpp */; };
+		6A24366623C602E00023BD4C /* BirdGame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6A24366423C602E00023BD4C /* BirdGame.cpp */; };
 		6A5D8E1A23C3738800ECC6A8 /* Pipe.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6A5D8E1823C3738800ECC6A8 /* Pipe.cpp */; };
 		6AFC8B7E23C48AFA0098DD30 /* GameEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6AFC8B7823C48AFA0098DD30 /* GameEngine.cpp */; };
 		6AFC8B8223C4AB210098DD30 /* Ground.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6AFC8B8023C4AB210098DD30 /* Ground.cpp */; };
@@ -40,6 +41,8 @@
 		6A24365F23C5EE9B0023BD4C /* Background.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Background.hpp; sourceTree = "<group>"; };
 		6A24366123C5F63D0023BD4C /* Text.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Text.cpp; sourceTree = "<group>"; };
 		6A24366223C5F63D0023BD4C /* Text.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Text.hpp; sourceTree = "<group>"; };
+		6A24366423C602E00023BD4C /* BirdGame.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BirdGame.cpp; sourceTree = "<group>"; };
+		6A24366523C602E00023BD4C /* BirdGame.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BirdGame.hpp; sourceTree = "<group>"; };
 		6A5D8E1723C3734300ECC6A8 /* Prog3Assignment */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Prog3Assignment; sourceTree = "<group>"; };
 		6A5D8E1823C3738800ECC6A8 /* Pipe.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Pipe.cpp; sourceTree = "<group>"; };
 		6A5D8E1923C3738800ECC6A8 /* Pipe.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Pipe.hpp; sourceTree = "<group>"; };
@@ -110,6 +113,8 @@
 				6A5D8E1723C3734300ECC6A8 /* Prog3Assignment */,
 				702FDECB23AD0635002E2AF0 /* Sprite.cpp */,
 				702FDECC23AD0635002E2AF0 /* Sprite.hpp */,
+				6A24366423C602E00023BD4C /* BirdGame.cpp */,
+				6A24366523C602E00023BD4C /* BirdGame.hpp */,
 				703ED6A723ABB078007C7001 /* Prog3Assignment.entitlements */,
 				703ED69523ABA904007C7001 /* main.cpp */,
 				6AFC8B8023C4AB210098DD30 /* Ground.cpp */,
@@ -203,6 +208,7 @@
 				703ED69623ABA904007C7001 /* main.cpp in Sources */,
 				6A24366023C5EE9B0023BD4C /* Background.cpp in Sources */,
 				6AFC8B8223C4AB210098DD30 /* Ground.cpp in Sources */,
+				6A24366623C602E00023BD4C /* BirdGame.cpp in Sources */,
 				6AFC8B7E23C48AFA0098DD30 /* GameEngine.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
