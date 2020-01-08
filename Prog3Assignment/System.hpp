@@ -13,7 +13,7 @@ struct System
     SDL_Renderer* ren;
     Mix_Chunk* music;
 
-    void setMusic(char path[]);
+    void setMusic(const char path[]);
 };
 
 // extern System sys;   

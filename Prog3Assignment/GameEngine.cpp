@@ -98,6 +98,6 @@ bool GameEngine::checkCollisions(Sprite &checkSprite) {
     return false;
 }
 
-void GameEngine::setMusic(char path[]) {
+void GameEngine::setMusic(const char path[]) {
     mSys.setMusic(path);
 }
