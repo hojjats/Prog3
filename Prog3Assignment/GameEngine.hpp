@@ -27,11 +27,11 @@ public:
     void render();
     
 private:
-    System mSys = System();
+    System mSys;
     std::vector<Sprite*> sprites;
     std::vector<Sprite*> added, removed;
     int FPS = 60;
-    SDL_Texture* background;
+    // SDL_Texture* background;
     Uint32 tickInterval = 1000 / FPS;
 };
 

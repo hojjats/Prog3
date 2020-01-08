@@ -9,9 +9,9 @@ struct System
     System();
     ~System();
     
-    SDL_Window* win;
-    SDL_Renderer* ren;
-    Mix_Chunk* music;
+    SDL_Window* win = nullptr;
+    SDL_Renderer* ren = nullptr;
+    Mix_Chunk* music = nullptr;
 
     void setMusic(const char path[]);
 };

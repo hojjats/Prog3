@@ -4,10 +4,10 @@ GameEngine::GameEngine()
 {}
 
 
-void GameEngine::addBackground(char path[])
-{
-    background = IMG_LoadTexture(mSys.ren,path);
-}
+// void GameEngine::addBackground(char path[])
+// {
+//     background = IMG_LoadTexture(mSys.ren,path);
+// }
 
 void GameEngine::add(Sprite* sprite) {
     sprite->generateTexture(mSys.ren);

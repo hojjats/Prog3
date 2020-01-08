@@ -26,7 +26,7 @@ private:
     const SDL_Color black = {0,0,0,255};
     const SDL_Color white = {255, 255, 255, 255};
     SDL_Rect shadow;
-    TTF_Font* font;
+    TTF_Font* font = nullptr;
     SDL_Texture* whiteMessage = nullptr;
     SDL_Texture* blackMessage = nullptr;
     std::string msg;
