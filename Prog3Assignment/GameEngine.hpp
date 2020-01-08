@@ -20,7 +20,8 @@ public:
         tickInterval = 1000 / FPS;
     }
     void run();
-    bool pollEvents(SDL_Event &event);
+    bool pollEvents();
+    void handleEvent(SDL_Event event);
     void update();
     bool checkCollisions(Sprite &sprite);
     void render();

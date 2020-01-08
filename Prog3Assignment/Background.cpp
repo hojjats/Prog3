@@ -24,7 +24,7 @@ Background::~Background() {
 
 void Background::tick() {
     crop.x++;
-    if (crop.x >= rect.w - 700) {
+    if (crop.x >= 2100 - 700) {
         crop.x = 0;
     }
 }
