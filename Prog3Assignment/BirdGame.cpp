@@ -39,7 +39,7 @@ void BirdGame::start() {
                 {
                         startGame = true;
                         ge.remove(startText);
-                        setupGame(&ge);
+                        setupGame(&ge, bird);
                 }
             }
             if (startGame) {
@@ -55,8 +55,7 @@ void BirdGame::start() {
     }
 }
 
-void BirdGame::setupGame(GameEngine* ge) {
-    Bird* bird = Bird::getInstance("Assets/bird.png", "Assets/bird2.png");
+void BirdGame::setupGame(GameEngine* ge, Bird* bird) {
     ge->add(bird);
     addPipeSection(ge, 200, 200);
     Ground* ground = Ground::getInstance("Assets/ground.png");

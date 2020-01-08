@@ -21,7 +21,7 @@
 class BirdGame {
 public:
     void start();
-    void setupGame(GameEngine* ge);
+    void setupGame(GameEngine* ge, Bird* bird);
     void addPipeSection(GameEngine* ge, int gapCenter, int gapDistance);
 private:
 };
