@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A24366023C5EE9B0023BD4C /* Background.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6A24365E23C5EE9B0023BD4C /* Background.cpp */; };
+		6A24366323C5F63D0023BD4C /* Text.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6A24366123C5F63D0023BD4C /* Text.cpp */; };
 		6A5D8E1A23C3738800ECC6A8 /* Pipe.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6A5D8E1823C3738800ECC6A8 /* Pipe.cpp */; };
-		6AFC8B7D23C48AFA0098DD30 /* Obstacle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6AFC8B7623C48AFA0098DD30 /* Obstacle.cpp */; };
 		6AFC8B7E23C48AFA0098DD30 /* GameEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6AFC8B7823C48AFA0098DD30 /* GameEngine.cpp */; };
 		6AFC8B8223C4AB210098DD30 /* Ground.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6AFC8B8023C4AB210098DD30 /* Ground.cpp */; };
 		702FDECD23AD0635002E2AF0 /* Sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 702FDECB23AD0635002E2AF0 /* Sprite.cpp */; };
@@ -35,12 +36,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6A24365E23C5EE9B0023BD4C /* Background.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Background.cpp; sourceTree = "<group>"; };
+		6A24365F23C5EE9B0023BD4C /* Background.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Background.hpp; sourceTree = "<group>"; };
+		6A24366123C5F63D0023BD4C /* Text.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Text.cpp; sourceTree = "<group>"; };
+		6A24366223C5F63D0023BD4C /* Text.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Text.hpp; sourceTree = "<group>"; };
 		6A5D8E1723C3734300ECC6A8 /* Prog3Assignment */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Prog3Assignment; sourceTree = "<group>"; };
 		6A5D8E1823C3738800ECC6A8 /* Pipe.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Pipe.cpp; sourceTree = "<group>"; };
 		6A5D8E1923C3738800ECC6A8 /* Pipe.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Pipe.hpp; sourceTree = "<group>"; };
-		6AFC8B7623C48AFA0098DD30 /* Obstacle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Obstacle.cpp; sourceTree = "<group>"; };
 		6AFC8B7823C48AFA0098DD30 /* GameEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameEngine.cpp; sourceTree = "<group>"; };
-		6AFC8B7A23C48AFA0098DD30 /* Obstacle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Obstacle.h; sourceTree = "<group>"; };
 		6AFC8B7B23C48AFA0098DD30 /* GameEngine.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GameEngine.hpp; sourceTree = "<group>"; };
 		6AFC8B8023C4AB210098DD30 /* Ground.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Ground.cpp; sourceTree = "<group>"; };
 		6AFC8B8123C4AB210098DD30 /* Ground.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Ground.hpp; sourceTree = "<group>"; };
@@ -99,9 +102,11 @@
 			children = (
 				6AFC8B8323C4BEEF0098DD30 /* Assets */,
 				6AFC8B7823C48AFA0098DD30 /* GameEngine.cpp */,
+				6A24365E23C5EE9B0023BD4C /* Background.cpp */,
+				6A24365F23C5EE9B0023BD4C /* Background.hpp */,
+				6A24366123C5F63D0023BD4C /* Text.cpp */,
+				6A24366223C5F63D0023BD4C /* Text.hpp */,
 				6AFC8B7B23C48AFA0098DD30 /* GameEngine.hpp */,
-				6AFC8B7623C48AFA0098DD30 /* Obstacle.cpp */,
-				6AFC8B7A23C48AFA0098DD30 /* Obstacle.h */,
 				6A5D8E1723C3734300ECC6A8 /* Prog3Assignment */,
 				702FDECB23AD0635002E2AF0 /* Sprite.cpp */,
 				702FDECC23AD0635002E2AF0 /* Sprite.hpp */,
@@ -193,9 +198,10 @@
 				703ED6AA23ABB631007C7001 /* System.cpp in Sources */,
 				702FDECD23AD0635002E2AF0 /* Sprite.cpp in Sources */,
 				6A5D8E1A23C3738800ECC6A8 /* Pipe.cpp in Sources */,
+				6A24366323C5F63D0023BD4C /* Text.cpp in Sources */,
 				703ED6AD23ABB9DB007C7001 /* Session.cpp in Sources */,
 				703ED69623ABA904007C7001 /* main.cpp in Sources */,
-				6AFC8B7D23C48AFA0098DD30 /* Obstacle.cpp in Sources */,
+				6A24366023C5EE9B0023BD4C /* Background.cpp in Sources */,
 				6AFC8B8223C4AB210098DD30 /* Ground.cpp in Sources */,
 				6AFC8B7E23C48AFA0098DD30 /* GameEngine.cpp in Sources */,
 			);

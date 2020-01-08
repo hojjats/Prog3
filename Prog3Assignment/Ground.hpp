@@ -14,14 +14,16 @@
 
 class Ground : public Sprite {
 public:
-    Ground();
+    Ground(std::string path);
     ~Ground();
     void handleEvent(SDL_Event event) override;
     void tick() override;
-    void draw() const override;
+    void draw(SDL_Renderer* ren) const override;
+    void generateTexture(SDL_Renderer* ren) override;
 private:
-    SDL_Texture* texture = IMG_LoadTexture(sys.ren, "Assets/ground.png");
+    SDL_Texture* texture = nullptr;
     SDL_Rect crop;
+    std::string path;
 };
 
 #endif /* Ground_hpp */

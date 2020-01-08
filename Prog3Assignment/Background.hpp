@@ -1,31 +1,29 @@
 //
-//  Pipe.hpp
+//  Background.hpp
 //  Prog3Assignment
 //
-//  Created by Gustav Junedahl on 2020-01-06.
+//  Created by Gustav Junedahl on 2020-01-08.
 //  Copyright © 2020 Hojjat Seyed. All rights reserved.
 //
 
-#ifndef Pipe_hpp
-#define Pipe_hpp
+#ifndef Background_hpp
+#define Background_hpp
 
-#include "Sprite.hpp"
 #include <stdio.h>
+#include "Sprite.hpp"
 
-class Pipe : public Sprite {
+class Background : public Sprite {
 public:
-    Pipe(std::string path, int gapHeight, int gapWidth, bool isTop, int y);
-    ~Pipe();
+    Background(std::string path, SDL_Rect rect, SDL_Rect crop);
+    ~Background();
     void handleEvent(SDL_Event event) override;
     void tick() override;
     void draw(SDL_Renderer* ren) const override;
     void generateTexture(SDL_Renderer* ren) override;
 private:
     SDL_Texture* texture = nullptr;
-    int gapCenter;
-    int gapDistance;
-    int isTop;
+    SDL_Rect crop;
     std::string path;
 };
 
-#endif /* Pipe_hpp */
+#endif /* Background_hpp */

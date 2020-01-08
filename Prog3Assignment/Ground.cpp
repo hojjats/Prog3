@@ -8,7 +8,8 @@
 
 #include "Ground.hpp"
 
-Ground::Ground() : Sprite(0, 500-41, 700, 41) {
+Ground::Ground(std::string path) : Sprite(0, 500-41, 700, 41) {
+    this->path = path;
     this->crop = { 0, 0, 700, 41 };
 }
 
@@ -16,9 +17,13 @@ Ground::~Ground() {
     SDL_DestroyTexture(texture);
 }
 
-void Ground::draw() const {
+void Ground::draw(SDL_Renderer* ren) const {
     SDL_Rect rect = getRect();
-    SDL_RenderCopy(sys.ren, texture, &crop, &rect);
+    SDL_RenderCopy(ren, texture, &crop, &rect);
+}
+
+void Ground::generateTexture(SDL_Renderer *ren) {
+    this->texture = IMG_LoadTexture(ren, path.c_str());
 }
 
 void Ground::handleEvent(SDL_Event event) {};

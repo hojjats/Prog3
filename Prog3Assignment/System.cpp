@@ -30,5 +30,5 @@ System::~System() {
     SDL_Quit();
 }
 
-System sys;
+// System sys;
 

@@ -16,7 +16,7 @@ struct System
     void setMusic(char path[]);
 };
 
-extern System sys;   
+// extern System sys;   
 
 
 #endif /* System_hpp */

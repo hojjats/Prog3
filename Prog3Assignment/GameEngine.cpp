@@ -3,22 +3,95 @@
 GameEngine::GameEngine()
 {}
 
-void GameEngine::addSprite(Sprite* sprite)
-{
-    mSession.add(sprite);
-}
 
 void GameEngine::addBackground(char path[])
 {
-    mSession.addBackground(path);
+    background = IMG_LoadTexture(mSys.ren,path);
 }
 
-void GameEngine::setFps(int fps)
-{
-    mSession.setFps(fps);
+void GameEngine::add(Sprite* sprite) {
+    sprite->setFPS(FPS);
+    added.push_back(sprite);
 }
 
-void GameEngine::run()
-{
-    mSession.run();
+void GameEngine::remove(Sprite* sprite) {
+    removed.push_back(sprite);
+}
+
+bool GameEngine::pollEvents(SDL_Event &event) {
+    while(SDL_PollEvent(&event))
+    {
+        if(event.type == SDL_QUIT)
+        {
+            //gameStart = false;
+            //exit = true;
+        }
+        
+        if(event.type == SDL_KEYDOWN)
+        {
+            if(event.key.keysym.sym == SDLK_SPACE)
+            {
+                //gameStart = true;
+                //exit = true;
+            }
+        }
+    } // Poll event
+    return false;
+}
+
+void GameEngine::update() {
+    for (Sprite* sprite : sprites) {
+        sprite->tick();
+    }
+    
+    for (Sprite* sprite : added) {
+        sprites.push_back(sprite);
+    }
+    added.clear();
+    
+    for (Sprite* sprite : removed){
+        for (std::vector<Sprite*>::iterator i = sprites.begin(); i != sprites.end();){
+            if (*i == sprite) {
+                i = sprites.erase(i);
+            }
+            else
+                i++;
+        }
+    }
+    
+    for(int i = 0; i < removed.size();i++)
+    {
+        delete removed[i];
+    }
+    removed.clear();
+    
+}
+
+void GameEngine::render() {
+    SDL_RenderClear(mSys.ren);
+    //SDL_RenderCopy(mSys.ren, background, &bgCrop, &bgRect );
+    for (Sprite* sprite: sprites){
+        sprite->draw(mSys.ren);
+    }
+    //showScore();
+    SDL_RenderPresent(mSys.ren);
+    Uint32 nextTick = SDL_GetTicks() + tickInterval;
+    int delay = nextTick - SDL_GetTicks();
+    if (delay > 0)
+        SDL_Delay(delay);
+}
+
+bool GameEngine::checkCollisions(Sprite &checkSprite) {
+    for (Sprite* sprite : sprites) {
+        if (!(sprite == &checkSprite)) {
+            if (checkSprite.checkCollision(checkSprite.getRect(), sprite->getRect())) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+void GameEngine::setMusic(char path[]) {
+    mSys.setMusic(path);
 }
