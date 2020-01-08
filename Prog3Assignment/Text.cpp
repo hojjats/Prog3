@@ -14,7 +14,7 @@ Text* Text::getInstance(const char msg[], const char fontPath[], SDL_Rect rect)
     return new Text(msg,fontPath,rect);
 }
 
-Text::Text(const char msg[], const char fontPath[], SDL_Rect rect) : Sprite(rect.x, rect.y, rect.w, rect.h) {
+Text::Text(const char msg[], const char fontPath[], SDL_Rect rect) : Sprite(rect.x, rect.y, rect.w, rect.h,false) {
     this->font = TTF_OpenFont(fontPath, 24);
     strcpy(this->msg, msg);
 

@@ -13,7 +13,7 @@ Background* Background::getInstance(std::string path, SDL_Rect rect, SDL_Rect cr
     return new Background(path,rect,crop);
 }
 
-Background::Background(std::string path, SDL_Rect rect, SDL_Rect crop) : Sprite(rect.x,rect.y, rect.w, rect.h)  {
+Background::Background(std::string path, SDL_Rect rect, SDL_Rect crop) : Sprite(rect.x,rect.y, rect.w, rect.h,false)  {
     this->path = path;
     this->crop = crop;
 }

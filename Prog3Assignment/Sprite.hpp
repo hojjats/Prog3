@@ -15,8 +15,9 @@ public:
     bool checkCollision(const SDL_Rect a, const SDL_Rect b);
     void setFPS(int fps){FPS = fps;}
     virtual void generateTexture(SDL_Renderer* ren) = 0;
+    bool hasHitBox;
 protected:
-    Sprite(int x, int y, int w, int h) : rect{ x,y,w,h } {}
+    Sprite(int x, int y, int w, int h,bool hasHitBox) : rect{ x,y,w,h },hasHitBox(hasHitBox) {}
     SDL_Rect rect;
     int FPS;
     std::string path;

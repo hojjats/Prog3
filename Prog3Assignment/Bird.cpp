@@ -7,7 +7,7 @@ Bird* Bird::getInstance(std::string path1, std::string path2)
     return new Bird(path1,path2);
 }
 
-Bird::Bird(std::string path1, std::string path2): Sprite(320, 220, 40, 40){
+Bird::Bird(std::string path1, std::string path2): Sprite(320, 220, 40, 40, true){
     this->path1 = path1;
     this->path2 = path2;
 }

@@ -13,7 +13,7 @@ Pipe* Pipe::getInstance(std::string path, int gapCenter, int gapDistance, bool i
     return new Pipe(path,gapCenter,gapDistance,isTop,y);
 }
 
-Pipe::Pipe(std::string path, int gapCenter, int gapDistance, bool isTop, int y): Sprite(700,y,30,700) {
+Pipe::Pipe(std::string path, int gapCenter, int gapDistance, bool isTop, int y): Sprite(700,y,30,700,true) {
     this->path = path;
     this->gapCenter = gapCenter;
     this->gapDistance = gapDistance;

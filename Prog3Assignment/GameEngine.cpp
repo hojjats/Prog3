@@ -89,7 +89,7 @@ void GameEngine::render() {
 
 bool GameEngine::checkCollisions(Sprite &checkSprite) {
     for (Sprite* sprite : sprites) {
-        if (!(sprite == &checkSprite)) {
+        if (!(sprite == &checkSprite) && sprite->hasHitBox) {
             if (checkSprite.checkCollision(checkSprite.getRect(), sprite->getRect())) {
                 return true;
             }
