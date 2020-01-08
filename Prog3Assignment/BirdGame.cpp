@@ -21,7 +21,6 @@ void BirdGame::start() {
     ge.add(bg);
     ge.add(startText);
     
-    
     bool startGame = false;
     bool exit = false;
     while (!exit) {

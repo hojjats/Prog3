@@ -27,7 +27,7 @@ public:
     void render();
     
 private:
-    System mSys;
+    System mSys = System();
     std::vector<Sprite*> sprites;
     std::vector<Sprite*> added, removed;
     int FPS = 60;
