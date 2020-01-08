@@ -8,6 +8,11 @@
 
 #include "Ground.hpp"
 
+Ground* Ground::getInstance(std::string path)
+{
+    return new Ground(path);
+}
+
 Ground::Ground(std::string path) : Sprite(0, 500-41, 700, 41) {
     this->path = path;
     this->crop = { 0, 0, 700, 41 };

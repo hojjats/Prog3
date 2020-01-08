@@ -2,6 +2,11 @@
 
 #include "Bird.hpp"
 
+Bird* Bird::getInstance(std::string path1, std::string path2)
+{
+    return new Bird(path1,path2);
+}
+
 Bird::Bird(std::string path1, std::string path2): Sprite(320, 220, 40, 40){
     this->path1 = path1;
     this->path2 = path2;

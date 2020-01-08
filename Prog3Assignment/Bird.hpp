@@ -10,13 +10,14 @@
 
 class Bird : public Sprite {
 public:
-    Bird(std::string path1, std::string path2);
+    static Bird* getInstance(std::string path1, std::string path2);
     ~Bird();
     void handleEvent(SDL_Event event) override;
     void draw(SDL_Renderer* ren) const override;
     void tick() override;
     void generateTexture(SDL_Renderer* ren) override;
 private:
+    Bird(std::string path1, std::string path2);
     SDL_Texture* texture = nullptr;
     SDL_Texture* tex1 = nullptr;
     SDL_Texture* tex2 = nullptr;

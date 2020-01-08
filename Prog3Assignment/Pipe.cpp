@@ -8,6 +8,11 @@
 
 #include "Pipe.hpp"
 
+Pipe* Pipe::getInstance(std::string path, int gapCenter, int gapDistance, bool isTop, int y)
+{
+    return new Pipe(path,gapCenter,gapDistance,isTop,y);
+}
+
 Pipe::Pipe(std::string path, int gapCenter, int gapDistance, bool isTop, int y): Sprite(700,y,30,700) {
     this->path = path;
     this->gapCenter = gapCenter;

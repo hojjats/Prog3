@@ -14,13 +14,14 @@
 
 class Pipe : public Sprite {
 public:
-    Pipe(std::string path, int gapHeight, int gapWidth, bool isTop, int y);
+    static Pipe* getInstance(std::string path,int gapHeight,int gapWidth,bool isTop,int y);
     ~Pipe();
     void handleEvent(SDL_Event event) override;
     void tick() override;
     void draw(SDL_Renderer* ren) const override;
     void generateTexture(SDL_Renderer* ren) override;
 private:
+    Pipe(std::string path, int gapHeight, int gapWidth, bool isTop, int y);
     SDL_Texture* texture = nullptr;
     int gapCenter;
     int gapDistance;

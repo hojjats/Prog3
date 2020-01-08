@@ -7,6 +7,12 @@
 //
 
 #include "Text.hpp"
+#include <cstring>
+
+Text* Text::getInstance(char msg[], char fontPath[], SDL_Rect rect)
+{
+    return new Text(msg,fontPath,rect);
+}
 
 Text::Text(char msg[], char fontPath[], SDL_Rect rect) : Sprite(rect.x, rect.y, rect.w, rect.h) {
     this->font = TTF_OpenFont(fontPath, 24);
