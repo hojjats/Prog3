@@ -14,14 +14,14 @@
 
 class Text : public Sprite {
 public:
-    static Text* getInstance(char msg[], char fontPath[], SDL_Rect rect);
+    static Text* getInstance(const char msg[],const char fontPath[], SDL_Rect rect);
     ~Text();
     void handleEvent(SDL_Event event) override;
     void tick() override;
     void draw(SDL_Renderer* ren) const override;
     void generateTexture(SDL_Renderer* ren) override;
 private:
-    Text(char msg[], char fontPath[], SDL_Rect rect);
+    Text(const char msg[], const char fontPath[], SDL_Rect rect);
     const SDL_Color black = {0,0,0,255};
     const SDL_Color white = {255, 255, 255, 255};
     SDL_Rect shadow;

@@ -10,6 +10,7 @@ void GameEngine::addBackground(char path[])
 }
 
 void GameEngine::add(Sprite* sprite) {
+    sprite->generateTexture(mSys.ren);
     sprite->setFPS(FPS);
     added.push_back(sprite);
 }
@@ -18,25 +19,30 @@ void GameEngine::remove(Sprite* sprite) {
     removed.push_back(sprite);
 }
 
-bool GameEngine::pollEvents(SDL_Event &event) {
+bool GameEngine::pollEvents() {
+    SDL_Event event;
     while(SDL_PollEvent(&event))
     {
         if(event.type == SDL_QUIT)
         {
-            //gameStart = false;
-            //exit = true;
+            return false;
         }
-        
+
         if(event.type == SDL_KEYDOWN)
         {
             if(event.key.keysym.sym == SDLK_SPACE)
             {
-                //gameStart = true;
-                //exit = true;
+                
             }
         }
     } // Poll event
-    return false;
+    return true;
+}
+
+void GameEngine::handleEvent(SDL_Event event) {
+    for (Sprite* sprite : sprites) {
+        sprite->handleEvent(event);
+    }
 }
 
 void GameEngine::update() {

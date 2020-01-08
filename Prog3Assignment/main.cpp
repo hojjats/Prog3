@@ -8,29 +8,22 @@
 #include "Pipe.hpp"
 #include "Ground.hpp"
 #include "GameEngine.hpp"
+#include "BirdGame.hpp"
 
 Session ses;
 
-void addPipeSection(int gapCenter, int gapDistance)
-{
-    const int screenH = 500, pipeH = 700;
-    int y = screenH - gapCenter + (gapDistance / 2);
-    Pipe *bottom = new Pipe(gapCenter, gapDistance, false, y);
-    ses.add(bottom);
-    y = -pipeH + (screenH - gapCenter - (gapDistance / 2));
-    Pipe *top = new Pipe(gapCenter, gapDistance, true, y);
-    ses.add(top);
-}
-
 int main(int argc, char **argv)
 {
+    BirdGame b;
+    b.start();
+    
     //Bird bird;
     //ses.add(&bird);
-    ses.addBackground("Assets/background.png");
-
-    addPipeSection(250, 300);
-    Ground ground;
-    ses.add(&ground);
-    ses.run();
+    //    ses.addBackground("Assets/background.png");
+    //
+    //    addPipeSection(250, 300);
+    //    Ground ground;
+    //    ses.add(&ground);
+    //    ses.run();
     return 0;
 }
