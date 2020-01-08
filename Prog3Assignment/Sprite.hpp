@@ -4,6 +4,7 @@
 #include <SDL2/SDL_image.h>
 #include "System.hpp"
 #include <string>
+#include <iostream>
 
 class Sprite{
 public:

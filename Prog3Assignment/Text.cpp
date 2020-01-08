@@ -30,6 +30,10 @@ Text::~Text() {
     SDL_DestroyTexture(whiteMessage);
     SDL_DestroyTexture(blackMessage);
     TTF_CloseFont(font);
+    whiteMessage = nullptr;
+    blackMessage = nullptr;
+    font = nullptr;
+    std::cout<<"Text Destructor"<<std::endl;
 }
 
 void Text::handleEvent(SDL_Event event) {};

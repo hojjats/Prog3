@@ -20,6 +20,11 @@ void GameEngine::remove(Sprite* sprite) {
 }
 
 void GameEngine::clearSprites() {
+    // Add sprites to removeVector!
+    for(auto sprite : sprites)
+    {
+        delete sprite;
+    }
     sprites.clear();
 }
 
