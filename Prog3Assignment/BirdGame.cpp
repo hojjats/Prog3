@@ -85,6 +85,7 @@ Pipe* BirdGame::addPipeSection(int gapCenter, int gapDistance)
 }
 
 bool BirdGame::newGame() {
+    scoreVal = 0;
     ge.setMusic("Assets/bgm_action_4.wav");
     Background* bg = Background::getInstance("Assets/background.png", { 0,0,700,500}, { 0,0,700,500});
     ge.add(bg);
