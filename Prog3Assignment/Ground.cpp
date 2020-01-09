@@ -20,6 +20,8 @@ Ground::Ground(std::string path) : Sprite(0, 500-41, 700, 41, true) {
 
 Ground::~Ground() {
     SDL_DestroyTexture(texture);
+    texture = nullptr;
+    std::cout<<"Ground Destructor"<<std::endl;
 }
 
 void Ground::draw(SDL_Renderer* ren) const {

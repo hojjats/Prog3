@@ -1,4 +1,5 @@
 #include "System.hpp"
+#include <iostream>
 
 static const int WINDOW_WIDTH = 700;
 static const int WINDOW_HEIGHT = 500;
@@ -28,6 +29,10 @@ System::~System() {
     SDL_DestroyWindow(win);
     SDL_DestroyRenderer(ren);
     SDL_Quit();
+    music = nullptr;
+    win = nullptr;
+    ren = nullptr;
+    std::cout<<"System Destructor"<<std::endl;
 }
 
 // System sys;

@@ -30,6 +30,10 @@ Text::~Text() {
     SDL_DestroyTexture(whiteMessage);
     SDL_DestroyTexture(blackMessage);
     TTF_CloseFont(font);
+    whiteMessage = nullptr;
+    blackMessage = nullptr;
+    font = nullptr;
+    std::cout<<"Text Destructor"<<std::endl;
 }
 
 void Text::handleEvent(SDL_Event event) {};
@@ -39,8 +43,8 @@ void Text::tick() {};
 void Text::generateTexture(SDL_Renderer *ren) {
     SDL_Surface* whiteText = TTF_RenderText_Solid(font,msg.c_str(),white);
     SDL_Surface* blackText = TTF_RenderText_Solid(font,msg.c_str(),black);
-    whiteMessage = SDL_CreateTextureFromSurface(ren,whiteText); // Fråga varför this-> inte funkar
-    blackMessage = SDL_CreateTextureFromSurface(ren,blackText);
+    this->whiteMessage = SDL_CreateTextureFromSurface(ren,whiteText); // Fråga varför this-> inte funkar när texture inte är satt till nullptr
+    this->blackMessage = SDL_CreateTextureFromSurface(ren,blackText);
     SDL_FreeSurface(whiteText);
     SDL_FreeSurface(blackText);
 }

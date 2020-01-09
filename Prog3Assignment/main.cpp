@@ -15,7 +15,7 @@ Session ses;
 int main(int argc, char **argv)
 {
     BirdGame b;
-    b.start();
+    b.run();
     
     //Bird bird;
     //ses.add(&bird);

@@ -1,5 +1,4 @@
 
-
 #include "Bird.hpp"
 
 Bird* Bird::getInstance(std::string path1, std::string path2)
@@ -16,6 +15,10 @@ Bird::~Bird(){
     SDL_DestroyTexture(texture);
     SDL_DestroyTexture(tex1);
     SDL_DestroyTexture(tex2);
+    texture = nullptr;
+    tex1 = nullptr;
+    tex2 = nullptr;
+    std::cout<<"Bird Destructor"<<std::endl;
 }
 
 void Bird::generateTexture(SDL_Renderer *ren) {

@@ -7,72 +7,137 @@
 //
 
 #include "BirdGame.hpp"
+#include <cstdlib>
 
-void addPipeSection(int gapCenter, int gapDistance);
+BirdGame::BirdGame() {}
 
-void BirdGame::start() {
-    GameEngine ge;
+void BirdGame::run() {
+    bool cont = true;
+    while (cont) {
+        cont = startScreen();
+        if (cont) {
+            cont = newGame();
+            cont = gameOver();
+        } 
+        
+    }
+}
+
+bool BirdGame::startScreen() {
     ge.setMusic("Assets/bgm_menu.wav");
-    Bird* bird = Bird::getInstance("Assets/bird.png", "Assets/bird2.png");
-    Ground* ground = Ground::getInstance("Assets/ground.png");
     Background* bg = Background::getInstance("Assets/background.png", { 0,0,700,500}, { 0,0,700,500});
-    Text* startText = Text::getInstance("PRESS SPACE TO START", "Assets/ARCADE_N.TTF", { 100, 200, 500, 40});
-    Text* score = Text::getInstance("0","Assets/ARCADE_N.TTF",  {350,50,50,50});
-    
     ge.add(bg);
+    Text* startText = Text::getInstance("PRESS SPACE TO START", "Assets/ARCADE_N.TTF", { 100, 200, 500, 40});
     ge.add(startText);
-    
-    bool startGame = false;
-    bool exit = false;
-    while (!exit) {
+    while (true) {
         SDL_Event event;
-        while(SDL_PollEvent(&event))
-        {
+        while(SDL_PollEvent(&event)) {
             if(event.type == SDL_QUIT)
             {
-                exit = true;
-            }
-            
-            if(!startGame && event.type == SDL_KEYDOWN)
-            {
-                if(event.key.keysym.sym == SDLK_SPACE)
-                {
-                        startGame = true;
-                        ge.remove(startText);
-                        setupGame(&ge, bird);
-                }
-            }
-            if (startGame) {
-                ge.handleEvent(event);
+                return false;
+            } else if (event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_SPACE) {
+                ge.clearSprites();
+                return true;
             }
         }
         ge.update();
-        bool crash = ge.checkCollisions(*bird);
-        if (crash) {
-            exit = true;
-        }
         ge.render();
     }
 }
 
-void BirdGame::setupGame(GameEngine* ge, Bird* bird) {
-    ge->setMusic("Assets/bgm_action_4.wav");
-    ge->add(bird);
-    addPipeSection(ge, 200, 200);
-    Ground* ground = Ground::getInstance("Assets/ground.png");
-    ge->add(ground);
-    Text* score = Text::getInstance("0","Assets/ARCADE_N.TTF",  {350,50,50,50});
-    ge->add(score);
+bool BirdGame::gameOver()
+{
+    ge.setMusic("Assets/bgm_gameover.wav");
+    Background* bg = Background::getInstance("Assets/backgroundGameOver.png", { 0,0,700,500}, { 0,0,700,500});
+    ge.add(bg);
+    Text* endText = Text::getInstance("GAME OVER", "Assets/ARCADE_N.TTF", { 250, 200, 250, 40});
+    Text* scoreText = Text::getInstance("SCORE "+std::to_string(scoreVal), "Assets/ARCADE_N.TTF", { 280, 270, 200, 40});
+    ge.add(endText);
+    ge.add(scoreText);
+
+    while (true) {
+        SDL_Event event;
+        while(SDL_PollEvent(&event)) {
+            if(event.type == SDL_QUIT)
+            {
+                return false;
+            } else if (event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_SPACE) {
+                ge.clearSprites();
+                return true;
+            }
+        }
+        ge.update();
+        ge.render();
+    }
+    
 }
 
-
-void BirdGame::addPipeSection(GameEngine* ge, int gapCenter, int gapDistance)
+Pipe* BirdGame::addPipeSection(int gapCenter, int gapDistance)
 {
     const int screenH = 500, pipeH = 700;
     int y = screenH - gapCenter + (gapDistance / 2);
     Pipe* bottom = Pipe::getInstance("Assets/pipe.png", gapCenter, gapDistance, false, y);
-    ge->add(bottom);
+    ge.add(bottom);
     y = -pipeH + (screenH - gapCenter - (gapDistance / 2));
     Pipe* top = Pipe::getInstance("Assets/pipe.png", gapCenter, gapDistance, true, y);
-    ge->add(top);
+    ge.add(top);
+    return top;
+}
+
+bool BirdGame::newGame() {
+    scoreVal = 0;
+    ge.setMusic("Assets/bgm_action_4.wav");
+    Background* bg = Background::getInstance("Assets/background.png", { 0,0,700,500}, { 0,0,700,500});
+    ge.add(bg);
+    Bird* bird = Bird::getInstance("Assets/bird.png", "Assets/bird2.png");
+    ge.add(bird);
+    
+    std::vector<Pipe*> futurePipes;
+    Pipe* p = addPipeSection(320, 160);
+    futurePipes.push_back(p);
+    // int scoreVal = 0;
+    int lastGapHeight = 320;
+    
+    Ground* ground = Ground::getInstance("Assets/ground.png");
+    ge.add(ground);
+    Text* score = Text::getInstance(std::to_string(scoreVal),"Assets/ARCADE_N.TTF",  {350,50,50,50});
+    ge.add(score);
+    bool crashed = false;
+    bool cont = true;
+    while (!crashed && cont) {
+        cont = ge.pollEvents();
+        ge.update();
+        crashed = ge.checkCollisions(*bird);
+        ge.render();
+        
+        
+        // Add new pipes
+        Pipe* lastpipe = futurePipes.back();
+        if (lastpipe->getRect().x <  700 - 80) {
+            int gapDelta = (rand()%60)-20;
+            if (lastGapHeight + gapDelta > 700 - 160) {
+                gapDelta = -gapDelta;
+            }else if (lastGapHeight + gapDelta < 0 + 160) {
+                gapDelta = +gapDelta;
+            }
+            Pipe* p = addPipeSection(lastGapHeight + gapDelta, 160);
+            lastGapHeight = lastGapHeight + gapDelta;
+            futurePipes.push_back(p);
+            
+        }
+        
+        // passed the pipe
+        Pipe* firstpipe = futurePipes.front();
+        if (firstpipe->getRect().x < bird->getRect().x) {
+            ge.remove(score);
+            scoreVal++;
+            score = Text::getInstance(std::to_string(scoreVal),"Assets/ARCADE_N.TTF",  {350,50,50,50});
+            ge.add(score);
+            futurePipes.erase(futurePipes.begin());
+        }
+    }
+    
+    ge.clearSprites();
+    
+    return cont;
 }
