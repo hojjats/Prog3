@@ -31,7 +31,7 @@ private:
     System mSys;
     std::vector<Sprite*> sprites;
     std::vector<Sprite*> added, removed;
-    int FPS = 60;
+    int FPS = 100;
     // SDL_Texture* background;
     Uint32 tickInterval = 1000 / FPS;
 };

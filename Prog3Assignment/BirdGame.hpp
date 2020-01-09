@@ -24,9 +24,11 @@ public:
     bool startScreen();
     Pipe* addPipeSection(int gapCenter, int gapDistance);
     bool newGame();
+    bool gameOver();
     void run();
 private:
     GameEngine ge;
+    int scoreVal = 0;
 };
 
 #endif /* BirdGame_hpp */

@@ -17,7 +17,9 @@ void BirdGame::run() {
         cont = startScreen();
         if (cont) {
             cont = newGame();
-        }
+            cont = gameOver();
+        } 
+        
     }
 }
 
@@ -43,6 +45,33 @@ bool BirdGame::startScreen() {
     }
 }
 
+bool BirdGame::gameOver()
+{
+    ge.setMusic("Assets/bgm_gameover.wav");
+    Background* bg = Background::getInstance("Assets/backgroundGameOver.png", { 0,0,700,500}, { 0,0,700,500});
+    ge.add(bg);
+    Text* endText = Text::getInstance("GAME OVER", "Assets/ARCADE_N.TTF", { 250, 200, 250, 40});
+    Text* scoreText = Text::getInstance("SCORE "+std::to_string(scoreVal), "Assets/ARCADE_N.TTF", { 280, 270, 200, 40});
+    ge.add(endText);
+    ge.add(scoreText);
+
+    while (true) {
+        SDL_Event event;
+        while(SDL_PollEvent(&event)) {
+            if(event.type == SDL_QUIT)
+            {
+                return false;
+            } else if (event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_SPACE) {
+                ge.clearSprites();
+                return true;
+            }
+        }
+        ge.update();
+        ge.render();
+    }
+    
+}
+
 Pipe* BirdGame::addPipeSection(int gapCenter, int gapDistance)
 {
     const int screenH = 500, pipeH = 700;
@@ -65,7 +94,7 @@ bool BirdGame::newGame() {
     std::vector<Pipe*> futurePipes;
     Pipe* p = addPipeSection(320, 160);
     futurePipes.push_back(p);
-    int scoreVal = 0;
+    // int scoreVal = 0;
     int lastGapHeight = 320;
     
     Ground* ground = Ground::getInstance("Assets/ground.png");
