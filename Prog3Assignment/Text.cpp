@@ -33,11 +33,11 @@ Text::~Text() {
     whiteMessage = nullptr;
     blackMessage = nullptr;
     font = nullptr;
-    std::cout<<"Text Destructor"<<std::endl;
+    //std::cout<<"Text Destructor"<<std::endl;
 }
 
 void Text::handleEvent(SDL_Event event) {};
-
+ 
 void Text::tick() {};
 
 void Text::generateTexture(SDL_Renderer *ren) {

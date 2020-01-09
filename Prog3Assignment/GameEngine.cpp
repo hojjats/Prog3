@@ -4,11 +4,6 @@ GameEngine::GameEngine()
 {}
 
 
-// void GameEngine::addBackground(char path[])
-// {
-//     background = IMG_LoadTexture(mSys.ren,path);
-// }
-
 void GameEngine::add(Sprite* sprite) {
     sprite->generateTexture(mSys.ren);
     sprite->setFPS(FPS);
@@ -21,19 +16,18 @@ void GameEngine::remove(Sprite* sprite) {
 
 void GameEngine::clearSprites() {
     // Add sprites to removeVector!
-    for(auto sprite : sprites)
-    {
+    for(auto sprite : sprites){
         delete sprite;
     }
     sprites.clear();
+    added.clear();
+    removed.clear();
 }
 
 bool GameEngine::pollEvents() {
     SDL_Event event;
-    while(SDL_PollEvent(&event))
-    {
-        if(event.type == SDL_QUIT)
-        {
+    while(SDL_PollEvent(&event)) {
+        if(event.type == SDL_QUIT) {
             return false;
         }
         for (Sprite* sprite : sprites) {
@@ -41,12 +35,6 @@ bool GameEngine::pollEvents() {
         }
     } // Poll event
     return true;
-}
-
-void GameEngine::handleEvent(SDL_Event event) {
-    for (Sprite* sprite : sprites) {
-        sprite->handleEvent(event);
-    }
 }
 
 void GameEngine::update() {
@@ -59,28 +47,26 @@ void GameEngine::update() {
     }
     added.clear();
     
-    for (Sprite* sprite : removed){
-        for (std::vector<Sprite*>::iterator i = sprites.begin(); i != sprites.end();){
+    for (Sprite* sprite : removed) {
+        for (std::vector<Sprite*>::iterator i = sprites.begin(); i != sprites.end();) {
             if (*i == sprite) {
                 i = sprites.erase(i);
-            }
-            else
+            } else {
                 i++;
+            }
         }
     }
     
-    for(int i = 0; i < removed.size();i++)
-    {
+    for(int i = 0; i < removed.size();i++) {
         delete removed[i];
     }
     removed.clear();
-    
 }
 
 void GameEngine::render() {
     SDL_RenderClear(mSys.ren);
     //SDL_RenderCopy(mSys.ren, background, &bgCrop, &bgRect );
-    for (Sprite* sprite: sprites){
+    for (Sprite* sprite: sprites) {
         sprite->draw(mSys.ren);
     }
     //showScore();
