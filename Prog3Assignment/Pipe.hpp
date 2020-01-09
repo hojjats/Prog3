@@ -27,6 +27,7 @@ private:
     int gapDistance;
     int isTop;
     std::string path;
+    SDL_Rect crop;
 };
 
 #endif /* Pipe_hpp */

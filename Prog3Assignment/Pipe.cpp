@@ -18,6 +18,11 @@ Pipe::Pipe(std::string path, int gapCenter, int gapDistance, bool isTop, int y):
     this->gapCenter = gapCenter;
     this->gapDistance = gapDistance;
     this->isTop = isTop;
+    if (!isTop) {
+        int h =  gapCenter - (gapDistance/2) - 41;
+        this->crop = {0,0, 30, h};
+        rect.h = h;
+    }
 }
 
 Pipe::~Pipe() {
@@ -38,7 +43,7 @@ void Pipe::draw(SDL_Renderer* ren) const {
         SDL_RenderCopyEx(ren, texture, NULL, &rect, 180.0f, &center, SDL_FLIP_HORIZONTAL);
     } else {
         // Bottom pipe
-        SDL_RenderCopy(ren, texture, NULL, &rect);
+        SDL_RenderCopy(ren, texture, &crop, &rect);
     }
 }
 
