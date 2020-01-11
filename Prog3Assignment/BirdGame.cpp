@@ -87,6 +87,9 @@ Pipe* BirdGame::addPipeSection(int gapCenter, int gapDistance)
 }
 
 bool BirdGame::newGame() {
+    int gapDistance = 160; // Distance between top- and bottompipe.
+    int distanceBetweenPipes = 150; // Pixel interval between pipes.
+    int maxPipeGapDelta = 100; // Maximum diff in gap height between consecutive pipes.
     scoreVal = 0;
     ge.setMusic("Assets/bgm_action_4.wav");
     Background* bg = Background::getInstance("Assets/background.png", windowSize, windowSize);
@@ -95,10 +98,9 @@ bool BirdGame::newGame() {
     ge.add(bird);
     
     std::vector<Pipe*> futurePipes;
-    Pipe* p = addPipeSection(windowSize.h/2, 160);
-    futurePipes.push_back(p);
-    // int scoreVal = 0;
+    Pipe* p = addPipeSection(windowSize.h/2, gapDistance);
     int lastGapHeight = windowSize.h/2;
+    futurePipes.push_back(p);
     
     Ground* ground = Ground::getInstance("Assets/ground.png");
     ge.add(ground);
@@ -115,14 +117,14 @@ bool BirdGame::newGame() {
         
         // Add new pipes
         Pipe* lastpipe = futurePipes.back();
-        if (lastpipe->getRect().x <  windowSize.w - 80) {
-            int gapDelta = (rand()%60)-20;
-            if (lastGapHeight + gapDelta > windowSize.w - 160) {
+        if (lastpipe->getRect().x <  windowSize.w - distanceBetweenPipes) {
+            int gapDelta = (rand() % maxPipeGapDelta) - (maxPipeGapDelta/2);
+            if (lastGapHeight + gapDelta > windowSize.w - gapDistance) {
                 gapDelta = -gapDelta;
-            }else if (lastGapHeight + gapDelta < 0 + 160) {
+            }else if (lastGapHeight + gapDelta < 0 + gapDistance) {
                 gapDelta = +gapDelta;
             }
-            Pipe* p = addPipeSection(lastGapHeight + gapDelta, 160);
+            Pipe* p = addPipeSection(lastGapHeight + gapDelta, gapDistance);
             lastGapHeight = lastGapHeight + gapDelta;
             futurePipes.push_back(p);
             
