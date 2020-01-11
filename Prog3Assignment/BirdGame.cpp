@@ -9,7 +9,9 @@
 #include "BirdGame.hpp"
 #include <cstdlib>
 
-BirdGame::BirdGame() {}
+BirdGame::BirdGame() {
+    windowSize = ge.getWindowSize();
+}
 
 void BirdGame::run() {
     bool cont = true;
@@ -25,7 +27,7 @@ void BirdGame::run() {
 
 bool BirdGame::startScreen() {
     ge.setMusic("Assets/bgm_menu.wav");
-    Background* bg = Background::getInstance("Assets/background.png", { 0,0,700,500}, { 0,0,700,500});
+    Background* bg = Background::getInstance("Assets/background.png", windowSize, windowSize);
     ge.add(bg);
     Text* startText = Text::getInstance("PRESS SPACE TO START", "Assets/ARCADE_N.TTF", { 100, 200, 500, 40});
     ge.add(startText);
@@ -48,7 +50,7 @@ bool BirdGame::startScreen() {
 bool BirdGame::gameOver()
 {
     ge.setMusic("Assets/bgm_gameover.wav");
-    Background* bg = Background::getInstance("Assets/backgroundGameOver.png", { 0,0,700,500}, { 0,0,700,500});
+    Background* bg = Background::getInstance("Assets/backgroundGameOver.png", windowSize, windowSize);
     ge.add(bg);
     Text* endText = Text::getInstance("GAME OVER", "Assets/ARCADE_N.TTF", { 250, 200, 250, 40});
     Text* scoreText = Text::getInstance("SCORE "+std::to_string(scoreVal), "Assets/ARCADE_N.TTF", { 280, 270, 200, 40});
@@ -74,11 +76,11 @@ bool BirdGame::gameOver()
 
 Pipe* BirdGame::addPipeSection(int gapCenter, int gapDistance)
 {
-    const int screenH = 500, pipeH = 700;
-    int y = screenH - gapCenter + (gapDistance / 2);
+    const int pipeH = 700;
+    int y = windowSize.h - gapCenter + (gapDistance / 2);
     Pipe* bottom = Pipe::getInstance("Assets/pipe.png", gapCenter, gapDistance, false, y);
     ge.add(bottom);
-    y = -pipeH + (screenH - gapCenter - (gapDistance / 2));
+    y = -pipeH + (windowSize.h - gapCenter - (gapDistance / 2));
     Pipe* top = Pipe::getInstance("Assets/pipe.png", gapCenter, gapDistance, true, y);
     ge.add(top);
     return top;
@@ -87,16 +89,16 @@ Pipe* BirdGame::addPipeSection(int gapCenter, int gapDistance)
 bool BirdGame::newGame() {
     scoreVal = 0;
     ge.setMusic("Assets/bgm_action_4.wav");
-    Background* bg = Background::getInstance("Assets/background.png", { 0,0,700,500}, { 0,0,700,500});
+    Background* bg = Background::getInstance("Assets/background.png", windowSize, windowSize);
     ge.add(bg);
     Bird* bird = Bird::getInstance("Assets/bird.png", "Assets/bird2.png");
     ge.add(bird);
     
     std::vector<Pipe*> futurePipes;
-    Pipe* p = addPipeSection(320, 160);
+    Pipe* p = addPipeSection(windowSize.h/2, 160);
     futurePipes.push_back(p);
     // int scoreVal = 0;
-    int lastGapHeight = 320;
+    int lastGapHeight = windowSize.h/2;
     
     Ground* ground = Ground::getInstance("Assets/ground.png");
     ge.add(ground);
@@ -113,9 +115,9 @@ bool BirdGame::newGame() {
         
         // Add new pipes
         Pipe* lastpipe = futurePipes.back();
-        if (lastpipe->getRect().x <  700 - 80) {
+        if (lastpipe->getRect().x <  windowSize.w - 80) {
             int gapDelta = (rand()%60)-20;
-            if (lastGapHeight + gapDelta > 700 - 160) {
+            if (lastGapHeight + gapDelta > windowSize.w - 160) {
                 gapDelta = -gapDelta;
             }else if (lastGapHeight + gapDelta < 0 + 160) {
                 gapDelta = +gapDelta;

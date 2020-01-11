@@ -26,7 +26,7 @@ public:
     bool checkCollisions(Sprite &sprite);
     void render();
     void clearSprites();
-    
+    SDL_Rect getWindowSize();
 private:
     System mSys;
     std::vector<Sprite*> sprites;

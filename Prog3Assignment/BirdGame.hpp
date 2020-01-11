@@ -28,6 +28,7 @@ public:
     void run();
 private:
     GameEngine ge;
+    SDL_Rect windowSize;
     int scoreVal = 0;
 };
 

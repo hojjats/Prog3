@@ -3,6 +3,11 @@
 GameEngine::GameEngine()
 {}
 
+SDL_Rect GameEngine::getWindowSize() {
+    int windowHeight, windowWidth;
+    SDL_GetWindowSize(mSys.win, &windowWidth, &windowHeight);
+    return { 0,0,windowWidth, windowHeight};
+}
 
 void GameEngine::add(Sprite* sprite) {
     sprite->generateTexture(mSys.ren);
