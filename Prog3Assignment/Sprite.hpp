@@ -17,11 +17,17 @@ public:
     void setFPS(int fps){FPS = fps;}
     virtual void generateTexture(SDL_Renderer* ren) = 0;
     bool hasHitBox;
+    bool shouldBeRemoved()const{return remove;}
+    void setRemove(bool x){remove = x;}
 protected:
-    Sprite(int x, int y, int w, int h,bool hasHitBox) : rect{ x,y,w,h },hasHitBox(hasHitBox) {}
+    Sprite(int x, int y, int w, int h,bool hasHitBox) : rect{ x,y,w,h },hasHitBox(hasHitBox),remove(false) {}
     SDL_Rect rect;
     int FPS;
     std::string path;
+private:
+    bool remove;
+    Sprite(const Sprite&) = delete;
+    const Sprite& operator=(const Sprite&) = delete;
 };
 
 #endif

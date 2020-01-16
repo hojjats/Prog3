@@ -18,6 +18,7 @@ Pipe::Pipe(std::string path, int gapCenter, int gapDistance, bool isTop, int y):
     this->gapCenter = gapCenter;
     this->gapDistance = gapDistance;
     this->isTop = isTop;
+    this->shouldRemove = false;
     if (!isTop) {
         int h =  gapCenter - (gapDistance/2) - 41;
         this->crop = {0,0, 30, h};
@@ -51,4 +52,8 @@ void Pipe::handleEvent(SDL_Event event) {};
 
 void Pipe::tick() {
     rect.x--;
+    if(rect.x < -30)
+    {
+       setRemove(true);
+    }
 }

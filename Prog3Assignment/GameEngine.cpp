@@ -46,24 +46,25 @@ void GameEngine::update() {
     for (Sprite* sprite : sprites) {
         sprite->tick();
     }
-    
+
+    for(auto s = sprites.begin(); s<sprites.end();)
+    {
+        if((*s)->shouldBeRemoved()) 
+        {
+            removed.push_back((*s));
+            s = sprites.erase(s);
+        } else {
+            s++;
+        }            
+    }
+
     for (Sprite* sprite : added) {
         sprites.push_back(sprite);
     }
     added.clear();
     
-    for (Sprite* sprite : removed) {
-        for (std::vector<Sprite*>::iterator i = sprites.begin(); i != sprites.end();) {
-            if (*i == sprite) {
-                i = sprites.erase(i);
-            } else {
-                i++;
-            }
-        }
-    }
-    
-    for(int i = 0; i < removed.size();i++) {
-        delete removed[i];
+    for (auto sprite : removed) {
+         delete sprite;
     }
     removed.clear();
 }

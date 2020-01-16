@@ -133,7 +133,7 @@ bool BirdGame::newGame() {
         // passed the pipe
         Pipe* firstpipe = futurePipes.front();
         if (firstpipe->getRect().x < bird->getRect().x) {
-            ge.remove(score);
+            score->setRemove(true);
             scoreVal++;
             score = Text::getInstance(std::to_string(scoreVal),"Assets/ARCADE_N.TTF",  {350,50,50,50});
             ge.add(score);

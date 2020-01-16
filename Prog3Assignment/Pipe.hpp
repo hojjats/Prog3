@@ -28,6 +28,7 @@ private:
     int isTop;
     std::string path;
     SDL_Rect crop;
+    bool shouldRemove;
 };
 
 #endif /* Pipe_hpp */
