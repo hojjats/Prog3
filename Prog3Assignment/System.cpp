@@ -32,7 +32,7 @@ System::~System() {
     music = nullptr;
     win = nullptr;
     ren = nullptr;
-    std::cout<<"System Destructor"<<std::endl;
+    //std::cout<<"System Destructor"<<std::endl;
 }
 
 // System sys;

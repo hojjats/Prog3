@@ -10,7 +10,7 @@
 #define Ground_hpp
 
 #include "Sprite.hpp"
-#include <stdio.h>
+
 
 class Ground : public Sprite {
 public:

@@ -9,8 +9,6 @@
 #ifndef Text_hpp
 #define Text_hpp
 
-#include <stdio.h>
-#include <string>
 #include "Sprite.hpp"
 
 class Text : public Sprite {

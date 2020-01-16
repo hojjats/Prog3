@@ -2,7 +2,6 @@
 #define GAMEENGINE_H
 
 #include "System.hpp"
-#include "Session.hpp"
 #include "Sprite.hpp"
 #include <vector>
 #include <string>

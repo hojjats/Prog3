@@ -29,7 +29,7 @@ Pipe::Pipe(std::string path, int gapCenter, int gapDistance, bool isTop, int y):
 Pipe::~Pipe() {
     SDL_DestroyTexture(texture);
     texture = nullptr;
-      std::cout<<"Pipe Destructor"<<std::endl;
+    //std::cout<<"Pipe Destructor"<<std::endl;
 }
 
 void Pipe::generateTexture(SDL_Renderer *ren) {

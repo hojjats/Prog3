@@ -21,7 +21,7 @@ Background::Background(std::string path, SDL_Rect rect, SDL_Rect crop) : Sprite(
 Background::~Background() {
     SDL_DestroyTexture(texture);
     texture = nullptr;
-    std::cout<<"Background Destructor"<<std::endl;
+    //std::cout<<"Background Destructor"<<std::endl;
 }
 
 void Background::tick() {

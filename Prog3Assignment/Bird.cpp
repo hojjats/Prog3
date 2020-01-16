@@ -18,7 +18,7 @@ Bird::~Bird(){
     texture = nullptr;
     tex1 = nullptr;
     tex2 = nullptr;
-    std::cout<<"Bird Destructor"<<std::endl;
+    //std::cout<<"Bird Destructor"<<std::endl;
 }
 
 void Bird::generateTexture(SDL_Renderer *ren) {

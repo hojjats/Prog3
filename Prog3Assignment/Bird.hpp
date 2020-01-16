@@ -2,11 +2,7 @@
 #define Bird_hpp
 
 #include "Sprite.hpp"
-#include "Session.hpp"
-#include "Session.hpp"
-#include <SDL2/SDL.h>
-#include "System.hpp"
-#include <SDL2/SDL_image.h>
+
 
 class Bird : public Sprite {
 public:
