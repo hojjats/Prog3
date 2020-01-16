@@ -6,4 +6,4 @@ Build the game using: g++  {Source code folder}/**.cpp -I{path to SDL Include} -
 
 while standing one folder above the source code folder and necessary .dll files (SDL2_ttf, SDL2_image and SDL2_mixer) is copied into the source code folder.
 
-Paths to assesets in the game are relative to the source code folder and 
+Paths to assesets in the game are relative to the source code folder and should work if they are not moved.
